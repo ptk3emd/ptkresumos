@@ -1,0 +1,6 @@
+{
+  "name": "Resumo Clínica Médica - Estudo Interativo",
+  "description": "Plataforma dinâmica de estudo e consulta para Clínica Médica com busca inteligente, modo de teste ativo (ocultar células), anotações personalizadas e suporte a Markdown.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
