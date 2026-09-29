@@ -82,6 +82,15 @@ As contagens vêm de busca por palavras-chave. Termos ambíguos foram checados �
 
 **Ainda não cobertos:** pancreatite, colecistite, hepatites, doenças intersticiais, câncer de pulmão, valvopatias em detalhe, paliativos, intoxicações e perioperatório. Posso fazer uma segunda leva.
 
+### Segunda leva: `cards-temas-solicitados.txt`
+
+**197 cartões** dos 15 temas pedidos: LES, SAAF, vasculites, miopatias inflamatórias, esclerose sistêmica, Sjögren, Guillain-Barré, síncope e crise convulsiva, esclerose múltipla, miastenia gravis, DII, doença celíaca, neoplasia colorretal, emergências onco-hematológicas e neoplasias hematológicas.
+
+- LES, SAF, vasculites, DII e doença celíaca já tinham cartões curtos no deck; os novos aprofundam, sem repetir as perguntas.
+- Esclerose sistêmica e miastenia não apareciam no deck; Sjögren e miopatias tinham menções isoladas.
+- Fontes verificadas na web: EULAR 2023 (LES), ACR/EULAR 2023 (SAF), McDonald 2024, EAN 2025 (miastenia), USPSTF/USMSTF (CCR) e AGA (DII). O resto vem de livro-texto e está marcado como tal na coluna `extra`.
+- Para o rastreamento do CCR no Brasil, a diretriz do SUS estava em consulta pública; o cartão pede para conferir a versão vigente.
+
 ## 6. Atualizações de diretriz encontradas na pesquisa
 
 | Tema | O que mudou |
