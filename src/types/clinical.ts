@@ -10,7 +10,7 @@ export interface MedicalTable {
 
 export interface MedicalTopic {
   id: string; // e.g. "1.1"
-  chapterId: number; // 1 to 9
+  chapterId: number; // 1 to 12
   chapterTitle: string; // "1. Principais Infecções na Clínica Médica"
   title: string; // "1.1 Pneumonia adquirida na comunidade"
   note?: string; // Optional contextual notes/guidelines

@@ -13,6 +13,7 @@ import {
   X
 } from 'lucide-react';
 import { StudyTimer } from './StudyTimer';
+import { allTopics } from '../data/allChapters';
 
 interface HeaderProps {
   viewMode: 'single' | 'all';
@@ -393,7 +394,7 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">Índice Geral de Capítulos</div>
-                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">96 temas organizados por especialidade</div>
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">{allTopics.length} temas organizados por especialidade</div>
                   </div>
                 </div>
                 <span className="text-xs text-zinc-600">→</span>

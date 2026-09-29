@@ -81,6 +81,668 @@ export const chapter2: Chapter = {
               ]
             }
           ]
+        },
+        {
+          id: '2.1-t2',
+          subheading: 'Estratificação de risco pelo esquema tradicional (passo a passo)',
+          headers: ['Tópico', 'Conteúdo'],
+          rows: [
+            {
+              id: '2.1-t2-r1',
+              cells: [
+                'Contexto',
+                'A Diretriz 2025 recomenda o **escore PREVENT** (ver linha "Estratificação de risco" acima). O passo a passo abaixo é o **esquema tradicional com escore de Framingham**, ainda usado em muitos serviços e cobrado em provas; as tabelas de pontos estão logo a seguir.'
+              ]
+            },
+            {
+              id: '2.1-t2-r2',
+              cells: [
+                '1º passo: alto risco direto',
+                'É de **alto risco** se tiver qualquer um: **diabetes mellitus**, **AVC** ou **infarto agudo do miocárdio** prévios, **lesão de órgão-alvo** ou doença aterosclerótica — **AIT**, **hipertrofia de ventrículo esquerdo**, **nefropatia**, **retinopatia**, **aneurisma de aorta abdominal**, **estenose de carótida sintomática**.'
+              ]
+            },
+            {
+              id: '2.1-t2-r3',
+              cells: [
+                '2º passo: contar outros fatores de risco',
+                '**Tabagismo**, hipertensão, **obesidade**, **sedentarismo**, **sexo masculino**, **idade >65 anos** e **história familiar** de evento cardiovascular em parente de primeiro grau (**homem <55 anos; mulher <65 anos**).'
+              ]
+            },
+            {
+              id: '2.1-t2-r4',
+              cells: [
+                '3º passo: classificar',
+                '**0–1 fator de risco**: baixo risco. **≥2 fatores**: calcular o **escore de Framingham** (probabilidade de infarto ou AVC em 10 anos): **risco >20%: alto**; **risco <20%: intermediário**.'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t3',
+          subheading: 'Framingham: pontos por idade',
+          headers: ['Idade (anos)', 'Homens', 'Mulheres'],
+          rows: [
+            {
+              id: '2.1-t3-r1',
+              cells: [
+                '20–34',
+                '−9',
+                '−7'
+              ]
+            },
+            {
+              id: '2.1-t3-r2',
+              cells: [
+                '35–39',
+                '−4',
+                '−3'
+              ]
+            },
+            {
+              id: '2.1-t3-r3',
+              cells: [
+                '40–44',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t3-r4',
+              cells: [
+                '45–49',
+                '3',
+                '3'
+              ]
+            },
+            {
+              id: '2.1-t3-r5',
+              cells: [
+                '50–54',
+                '6',
+                '6'
+              ]
+            },
+            {
+              id: '2.1-t3-r6',
+              cells: [
+                '55–59',
+                '8',
+                '8'
+              ]
+            },
+            {
+              id: '2.1-t3-r7',
+              cells: [
+                '60–64',
+                '10',
+                '10'
+              ]
+            },
+            {
+              id: '2.1-t3-r8',
+              cells: [
+                '65–69',
+                '11',
+                '12'
+              ]
+            },
+            {
+              id: '2.1-t3-r9',
+              cells: [
+                '70–74',
+                '12',
+                '14'
+              ]
+            },
+            {
+              id: '2.1-t3-r10',
+              cells: [
+                '75–79',
+                '13',
+                '16'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t4',
+          subheading: 'Framingham (homens): pontos por colesterol total e idade',
+          headers: ['Colesterol total (mg/dL)', 'Idade 20–39', 'Idade 40–49', 'Idade 50–59', 'Idade 60–69', 'Idade 70–79'],
+          rows: [
+            {
+              id: '2.1-t4-r1',
+              cells: [
+                '<160',
+                '0',
+                '0',
+                '0',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t4-r2',
+              cells: [
+                '160–199',
+                '4',
+                '3',
+                '2',
+                '1',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t4-r3',
+              cells: [
+                '200–239',
+                '7',
+                '5',
+                '3',
+                '1',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t4-r4',
+              cells: [
+                '240–279',
+                '9',
+                '6',
+                '4',
+                '2',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t4-r5',
+              cells: [
+                '≥280',
+                '11',
+                '8',
+                '5',
+                '3',
+                '1'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t5',
+          subheading: 'Framingham (mulheres): pontos por colesterol total e idade',
+          headers: ['Colesterol total (mg/dL)', 'Idade 20–39', 'Idade 40–49', 'Idade 50–59', 'Idade 60–69', 'Idade 70–79'],
+          rows: [
+            {
+              id: '2.1-t5-r1',
+              cells: [
+                '<160',
+                '0',
+                '0',
+                '0',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t5-r2',
+              cells: [
+                '160–199',
+                '4',
+                '3',
+                '2',
+                '1',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t5-r3',
+              cells: [
+                '200–239',
+                '8',
+                '6',
+                '4',
+                '2',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t5-r4',
+              cells: [
+                '240–279',
+                '11',
+                '8',
+                '5',
+                '3',
+                '2'
+              ]
+            },
+            {
+              id: '2.1-t5-r5',
+              cells: [
+                '≥280',
+                '13',
+                '10',
+                '7',
+                '4',
+                '2'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t6',
+          subheading: 'Framingham: pontos por tabagismo e idade',
+          headers: ['Grupo', 'Idade 20–39', 'Idade 40–49', 'Idade 50–59', 'Idade 60–69', 'Idade 70–79'],
+          rows: [
+            {
+              id: '2.1-t6-r1',
+              cells: [
+                'Homens não fumantes',
+                '0',
+                '0',
+                '0',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t6-r2',
+              cells: [
+                'Homens fumantes',
+                '8',
+                '5',
+                '3',
+                '1',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t6-r3',
+              cells: [
+                'Mulheres não fumantes',
+                '0',
+                '0',
+                '0',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t6-r4',
+              cells: [
+                'Mulheres fumantes',
+                '9',
+                '7',
+                '4',
+                '2',
+                '1'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t7',
+          subheading: 'Framingham: pontos por HDL (homens e mulheres)',
+          headers: ['HDL (mg/dL)', 'Pontos'],
+          rows: [
+            {
+              id: '2.1-t7-r1',
+              cells: [
+                '≥60',
+                '−1'
+              ]
+            },
+            {
+              id: '2.1-t7-r2',
+              cells: [
+                '50–59',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t7-r3',
+              cells: [
+                '40–49',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t7-r4',
+              cells: [
+                '<40',
+                '2'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t8',
+          subheading: 'Framingham: pontos por pressão arterial sistólica',
+          headers: ['PA sistólica (mmHg)', 'Homens não tratados', 'Homens tratados', 'Mulheres não tratadas', 'Mulheres tratadas'],
+          rows: [
+            {
+              id: '2.1-t8-r1',
+              cells: [
+                '<120',
+                '0',
+                '0',
+                '0',
+                '0'
+              ]
+            },
+            {
+              id: '2.1-t8-r2',
+              cells: [
+                '120–129',
+                '0',
+                '1',
+                '1',
+                '3'
+              ]
+            },
+            {
+              id: '2.1-t8-r3',
+              cells: [
+                '130–139',
+                '1',
+                '2',
+                '2',
+                '4'
+              ]
+            },
+            {
+              id: '2.1-t8-r4',
+              cells: [
+                '140–159',
+                '1',
+                '2',
+                '3',
+                '5'
+              ]
+            },
+            {
+              id: '2.1-t8-r5',
+              cells: [
+                '≥160',
+                '2',
+                '3',
+                '4',
+                '6'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t9',
+          subheading: 'Framingham (homens): total de pontos e risco em 10 anos',
+          headers: ['Total de pontos', 'Risco em 10 anos (%)'],
+          rows: [
+            {
+              id: '2.1-t9-r1',
+              cells: [
+                '<0',
+                '<1'
+              ]
+            },
+            {
+              id: '2.1-t9-r2',
+              cells: [
+                '0',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t9-r3',
+              cells: [
+                '1',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t9-r4',
+              cells: [
+                '2',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t9-r5',
+              cells: [
+                '3',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t9-r6',
+              cells: [
+                '4',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t9-r7',
+              cells: [
+                '5',
+                '2'
+              ]
+            },
+            {
+              id: '2.1-t9-r8',
+              cells: [
+                '6',
+                '2'
+              ]
+            },
+            {
+              id: '2.1-t9-r9',
+              cells: [
+                '7',
+                '3'
+              ]
+            },
+            {
+              id: '2.1-t9-r10',
+              cells: [
+                '8',
+                '4'
+              ]
+            },
+            {
+              id: '2.1-t9-r11',
+              cells: [
+                '9',
+                '5'
+              ]
+            },
+            {
+              id: '2.1-t9-r12',
+              cells: [
+                '10',
+                '6'
+              ]
+            },
+            {
+              id: '2.1-t9-r13',
+              cells: [
+                '11',
+                '8'
+              ]
+            },
+            {
+              id: '2.1-t9-r14',
+              cells: [
+                '12',
+                '10'
+              ]
+            },
+            {
+              id: '2.1-t9-r15',
+              cells: [
+                '13',
+                '12'
+              ]
+            },
+            {
+              id: '2.1-t9-r16',
+              cells: [
+                '14',
+                '16'
+              ]
+            },
+            {
+              id: '2.1-t9-r17',
+              cells: [
+                '15',
+                '20'
+              ]
+            },
+            {
+              id: '2.1-t9-r18',
+              cells: [
+                '16',
+                '25'
+              ]
+            },
+            {
+              id: '2.1-t9-r19',
+              cells: [
+                '≥17',
+                '≥30'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.1-t10',
+          subheading: 'Framingham (mulheres): total de pontos e risco em 10 anos',
+          headers: ['Total de pontos', 'Risco em 10 anos (%)'],
+          rows: [
+            {
+              id: '2.1-t10-r1',
+              cells: [
+                '<9',
+                '<1'
+              ]
+            },
+            {
+              id: '2.1-t10-r2',
+              cells: [
+                '9',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t10-r3',
+              cells: [
+                '10',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t10-r4',
+              cells: [
+                '11',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t10-r5',
+              cells: [
+                '12',
+                '1'
+              ]
+            },
+            {
+              id: '2.1-t10-r6',
+              cells: [
+                '13',
+                '2'
+              ]
+            },
+            {
+              id: '2.1-t10-r7',
+              cells: [
+                '14',
+                '2'
+              ]
+            },
+            {
+              id: '2.1-t10-r8',
+              cells: [
+                '15',
+                '3'
+              ]
+            },
+            {
+              id: '2.1-t10-r9',
+              cells: [
+                '16',
+                '4'
+              ]
+            },
+            {
+              id: '2.1-t10-r10',
+              cells: [
+                '17',
+                '5'
+              ]
+            },
+            {
+              id: '2.1-t10-r11',
+              cells: [
+                '18',
+                '6'
+              ]
+            },
+            {
+              id: '2.1-t10-r12',
+              cells: [
+                '19',
+                '8'
+              ]
+            },
+            {
+              id: '2.1-t10-r13',
+              cells: [
+                '20',
+                '11'
+              ]
+            },
+            {
+              id: '2.1-t10-r14',
+              cells: [
+                '21',
+                '14'
+              ]
+            },
+            {
+              id: '2.1-t10-r15',
+              cells: [
+                '22',
+                '17'
+              ]
+            },
+            {
+              id: '2.1-t10-r16',
+              cells: [
+                '23',
+                '22'
+              ]
+            },
+            {
+              id: '2.1-t10-r17',
+              cells: [
+                '24',
+                '27'
+              ]
+            },
+            {
+              id: '2.1-t10-r18',
+              cells: [
+                '≥25',
+                '≥30'
+              ]
+            }
+          ]
         }
       ]
     },
@@ -158,6 +820,368 @@ export const chapter2: Chapter = {
               ]
             }
           ]
+        },
+        {
+          id: '2.2-t2',
+          subheading: 'Tratamento não medicamentoso (mudança do estilo de vida)',
+          headers: ['Medida', 'Recomendação', 'Redução esperada da PA'],
+          rows: [
+            {
+              id: '2.2-t2-r1',
+              cells: [
+                'Restrição de sódio',
+                'Material tradicional: **até 2,4 g de sódio/dia (~6 g de sal)**. **Diretriz 2025: <2 g de sódio/dia (~5 g de sal)**. Reduzir ultraprocessados, embutidos e temperos prontos.',
+                'Cerca de 2–8 mmHg'
+              ]
+            },
+            {
+              id: '2.2-t2-r2',
+              cells: [
+                'Dieta DASH',
+                'Rica em **potássio** (frutas e vegetais), com **cálcio** (laticínios desnatados) e pouca **gordura saturada e colesterol**. Cuidado com o potássio na doença renal avançada.',
+                'Cerca de 8–14 mmHg'
+              ]
+            },
+            {
+              id: '2.2-t2-r3',
+              cells: [
+                'Atividade física',
+                'Exercício **aeróbico, dinâmico e isométrico**, **3–6 vezes por semana**, em sessões de **30–60 minutos**.',
+                'Cerca de 4–9 mmHg'
+              ]
+            },
+            {
+              id: '2.2-t2-r4',
+              cells: [
+                'Perda de peso',
+                'Objetivo: **IMC entre 18,5 e 24,9**. Regra prática: **cada 1 kg perdido reduz cerca de 1 mmHg** na pressão.',
+                'Cerca de 5–20 mmHg a cada 10 kg'
+              ]
+            },
+            {
+              id: '2.2-t2-r5',
+              cells: [
+                'Controle do estresse',
+                'Psicoterapia, meditação e técnicas de relaxamento; sono adequado.',
+                'Efeito variável'
+              ]
+            },
+            {
+              id: '2.2-t2-r6',
+              cells: [
+                'Álcool',
+                'Controlar: **até 30 mL/dia de etanol** (≈625 mL de cerveja ou 240 mL de vinho) para homens; metade para mulheres e pessoas de menor peso.',
+                'Cerca de 2–4 mmHg'
+              ]
+            },
+            {
+              id: '2.2-t2-r7',
+              cells: [
+                'Tabagismo',
+                '**Cessar o tabagismo**: principal fator de risco cardiovascular modificável associado.',
+                'Reduz risco cardiovascular global'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.2-t3',
+          subheading: 'Abordagem terapêutica por estágio: esquema tradicional × Diretriz 2025',
+          headers: ['Situação', 'Esquema tradicional', 'Diretriz 2025 (Brasil)'],
+          rows: [
+            {
+              id: '2.2-t3-r1',
+              cells: [
+                'Pré-hipertensão (PA elevada)',
+                'Apenas tratamento não medicamentoso',
+                'Baixo risco: só medidas não medicamentosas; **alto risco**: medidas por 3 meses e, se fora da meta, medicamento'
+              ]
+            },
+            {
+              id: '2.2-t3-r2',
+              cells: [
+                'Estágio 1, risco baixo/intermediário',
+                'Medidas não medicamentosas; se sem melhora em **1–2 meses**, **monoterapia**',
+                '**Medicamento já ao diagnóstico**; monoterapia só em baixo risco selecionado, ≥80 anos e frágeis'
+              ]
+            },
+            {
+              id: '2.2-t3-r3',
+              cells: [
+                'Estágio 1 de alto risco; estágios 2 e 3',
+                'Medidas + **dois fármacos de classes diferentes** desde o início',
+                '**Combinação dupla inicial** (de preferência em comprimido único)'
+              ]
+            },
+            {
+              id: '2.2-t3-r4',
+              cells: [
+                'Sem atingir a meta',
+                'Aumentar a dose e/ou associar 2º ou 3º fármaco e/ou trocar o medicamento',
+                '**Tripla** (IECA/BRA + bloqueador de cálcio + tiazídico); depois espironolactona'
+              ]
+            },
+            {
+              id: '2.2-t3-r5',
+              cells: [
+                'Primeira e segunda linha',
+                'Fármacos usados de início são de **primeira linha**; quando **3–4 classes** de primeira linha não bastam, passa-se a fármacos de **segunda linha**',
+                'Espironolactona é o 4º fármaco de escolha na resistente'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.2-t4',
+          subheading: 'Primeira linha: ficha por classe',
+          headers: ['Classe', 'Mecanismo de ação', 'Indicação preferencial', 'Reações adversas', 'Quando evitar ou suspender', 'Exemplos e doses usuais*'],
+          rows: [
+            {
+              id: '2.2-t4-r1',
+              cells: [
+                '**Diuréticos tiazídicos**',
+                'Redução da volemia: inibem a reabsorção de **NaCl no túbulo contorcido distal**',
+                'Anti-hipertensivo de escolha na população geral; muito bom em **negros e idosos**; osteoporose',
+                'Clássicos **4 HIPO** (hipovolemia, **hipocalemia, hiponatremia, hipomagnesemia**) e **3 HIPER** (**hiperglicemia, hiperlipidemia, hiperuricemia**); impotência; *rash* cutâneo',
+                'Gota, hipocalemia ou hiponatremia importantes; alergia a sulfonamida',
+                'Hidroclorotiazida 12,5–25 mg/dia; **clortalidona 12,5–25 mg/dia**; indapamida 1,5 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t4-r2',
+              cells: [
+                '**IECA** (inibidores da enzima conversora de angiotensina)',
+                'Bloqueiam a formação de angiotensina II; vasodilatação e menor retenção de sódio',
+                'Diabetes com albuminúria, doença renal, insuficiência cardíaca com fração reduzida, pós-infarto',
+                '**Tosse seca** (bradicinina), **angioedema**, **hipercalemia**, aumento da creatinina',
+                '**Gestação**, estenose bilateral de artéria renal, angioedema prévio, hipercalemia grave',
+                'Captopril 25–150 mg/dia (2–3×); enalapril 5–40 mg/dia (1–2×); ramipril 2,5–10 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t4-r3',
+              cells: [
+                '**BRA** (bloqueadores do receptor de angiotensina II)',
+                'Bloqueiam o receptor AT1 da angiotensina II',
+                'Mesmas indicações dos IECA, **sem tosse**; alternativa na intolerância ao IECA',
+                'Hipercalemia, aumento da creatinina; angioedema raro',
+                '**Gestação**, estenose bilateral de artéria renal. **Nunca associar IECA + BRA** (mecanismos semelhantes)',
+                'Losartana 50–100 mg/dia; valsartana 80–320 mg/dia; olmesartana 20–40 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t4-r4',
+              cells: [
+                '**Bloqueadores de canal de cálcio diidropiridínicos**',
+                'Vasodilatação arterial por bloqueio dos canais de cálcio tipo L',
+                'Idosos, hipertensão sistólica isolada, angina, doença arterial periférica',
+                '**Edema de tornozelo**, cefaleia, rubor, taquicardia reflexa (nifedipino de curta ação)',
+                'Insuficiência cardíaca com fração reduzida grave (cautela); evitar nifedipino de curta ação',
+                'Anlodipino 2,5–10 mg/dia; nifedipino retard 20–60 mg/dia'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.2-t5',
+          subheading: 'Segunda linha e outras classes: ficha por classe',
+          headers: ['Classe', 'Mecanismo de ação', 'Indicação', 'Reações adversas', 'Quando evitar ou suspender', 'Exemplos e doses usuais*'],
+          rows: [
+            {
+              id: '2.2-t5-r1',
+              cells: [
+                '**Betabloqueadores**',
+                'Redução do débito cardíaco por antagonizar catecolaminas endógenas nos receptores beta-adrenérgicos. **Não seletivos** bloqueiam β1 (miocárdio) e β2 (músculo liso, pulmões, vasos). **Seletivos** bloqueiam sobretudo β1 (coração, sistema nervoso e rins), sem os efeitos periféricos indesejáveis; em doses muito altas perdem a seletividade',
+                'Indivíduos com outra doença que justifique: **enxaqueca**, **tremor essencial**, taquiarritmias, **doença coronariana sintomática**, **insuficiência cardíaca sistólica**, **pós-infarto**. Não são de primeira linha como monoterapia sem essas indicações',
+                '**Fadiga, impotência, broncoespasmo, insônia, indisposição**; bradicardia e bloqueio AV; mascaram hipoglicemia',
+                '**Broncoespasmo** (asma/DPOC) e **depressão**; bloqueio AV avançado; doença arterial periférica grave',
+                'Não seletivo: **propranolol 40–160 mg/dia em 2 tomadas**. Seletivos: atenolol 25–100 mg/dia; metoprolol succinato 50–200 mg/dia; bisoprolol 2,5–10 mg/dia. Com ação vasodilatadora: carvedilol 12,5–50 mg/dia (2×)'
+              ]
+            },
+            {
+              id: '2.2-t5-r2',
+              cells: [
+                '**Antagonistas da aldosterona**',
+                'Bloqueio do receptor mineralocorticoide (poupador de potássio)',
+                '**4º fármaco na resistente**, hiperaldosteronismo, insuficiência cardíaca',
+                '**Hipercalemia**, ginecomastia (espironolactona)',
+                'Hipercalemia, insuficiência renal avançada; **eplerenona** se ginecomastia',
+                'Espironolactona 25–50 mg/dia (até 100); eplerenona 25–50 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t5-r3',
+              cells: [
+                '**Diuréticos de alça**',
+                'Bloqueiam o cotransportador Na-K-2Cl na alça de Henle',
+                'Doença renal com TFG <30 mL/min, congestão, insuficiência cardíaca',
+                'Hipocalemia, hipovolemia, ototoxicidade',
+                'Depleção de volume; alergia a sulfonamida',
+                'Furosemida 20–80 mg/dia (1–2×)'
+              ]
+            },
+            {
+              id: '2.2-t5-r4',
+              cells: [
+                '**Bloqueadores de canal de cálcio não diidropiridínicos**',
+                'Reduzem frequência e condução cardíacas além de vasodilatar',
+                'Fibrilação atrial com resposta ventricular alta, angina',
+                'Bradicardia, bloqueio AV, constipação (verapamil)',
+                'Insuficiência cardíaca com fração reduzida; associação com betabloqueador',
+                'Verapamil 120–360 mg/dia; diltiazem 120–360 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t5-r5',
+              cells: [
+                '**Alfabloqueadores**',
+                'Bloqueiam receptores alfa-1 (vasodilatação)',
+                'Hiperplasia prostática benigna; quinto fármaco na resistente',
+                '**Hipotensão postural e síncope da primeira dose**, tontura',
+                'Hipotensão ortostática',
+                'Doxazosina 1–16 mg/dia'
+              ]
+            },
+            {
+              id: '2.2-t5-r6',
+              cells: [
+                '**Simpatolíticos de ação central**',
+                'Estimulam alfa-2 centrais e reduzem o tônus simpático',
+                '**Gestação (metildopa)**, resistente ou refratária',
+                'Sedação, boca seca, **hipertensão de rebote** na suspensão brusca de clonidina; hepatotoxicidade (metildopa)',
+                'Depressão; suspensão abrupta da clonidina',
+                'Clonidina 0,1–0,6 mg/dia (2–3×); metildopa 500–2.000 mg/dia (2–3×)'
+              ]
+            },
+            {
+              id: '2.2-t5-r7',
+              cells: [
+                '**Vasodilatadores diretos**',
+                'Relaxamento direto da musculatura lisa arterial',
+                'Resistente ou refratária; **hidralazina** na gestação e emergências',
+                'Taquicardia reflexa, retenção hídrica; **lúpus induzido por hidralazina**; **hirsutismo e derrame pericárdico com minoxidil**',
+                'Angina não protegida por betabloqueador; associar diurético e betabloqueador',
+                'Hidralazina 50–200 mg/dia (2–3×); minoxidil 2,5–40 mg/dia'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.2-t6',
+          subheading: 'Forte indicação para escolha farmacológica',
+          headers: ['Condição associada', 'Fármacos preferidos', 'Evitar ou cuidados'],
+          rows: [
+            {
+              id: '2.2-t6-r1',
+              cells: [
+                'Diabetes com albuminúria; doença renal crônica',
+                '**IECA ou BRA**; tiazídico/alça conforme TFG; iSGLT2 pelos benefícios renais',
+                'Dosar creatinina e potássio 1–2 semanas após iniciar ou aumentar a dose'
+              ]
+            },
+            {
+              id: '2.2-t6-r2',
+              cells: [
+                'Insuficiência cardíaca com fração reduzida',
+                'IECA/BRA (ou sacubitril-valsartana), **betabloqueador** (bisoprolol, carvedilol, metoprolol succinato), espironolactona, diurético de alça',
+                '**Evitar bloqueadores de cálcio não diidropiridínicos**'
+              ]
+            },
+            {
+              id: '2.2-t6-r3',
+              cells: [
+                'Pós-infarto e doença coronariana sintomática',
+                '**Betabloqueador + IECA/BRA**; bloqueador de cálcio na angina',
+                'Evitar nifedipino de curta ação'
+              ]
+            },
+            {
+              id: '2.2-t6-r4',
+              cells: [
+                'Idosos e hipertensão sistólica isolada',
+                '**Tiazídico** e **bloqueador de cálcio diidropiridínico**',
+                'Hipotensão ortostática e quedas'
+              ]
+            },
+            {
+              id: '2.2-t6-r5',
+              cells: [
+                'Negros',
+                '**Tiazídico e bloqueador de cálcio** (respondem melhor)',
+                'Menor resposta a monoterapia com IECA/BRA/betabloqueador'
+              ]
+            },
+            {
+              id: '2.2-t6-r6',
+              cells: [
+                'Enxaqueca; tremor essencial',
+                'Betabloqueador (propranolol); bloqueador de cálcio na enxaqueca',
+                'Asma'
+              ]
+            },
+            {
+              id: '2.2-t6-r7',
+              cells: [
+                'Fibrilação atrial e taquiarritmias',
+                'Betabloqueador; bloqueador de cálcio não diidropiridínico',
+                'Bloqueio AV'
+              ]
+            },
+            {
+              id: '2.2-t6-r8',
+              cells: [
+                'Osteoporose',
+                'Tiazídico (reduz a calciúria)',
+                'Gota e hipercalcemia'
+              ]
+            },
+            {
+              id: '2.2-t6-r9',
+              cells: [
+                'Hiperplasia prostática benigna',
+                'Alfabloqueador (doxazosina)',
+                'Hipotensão postural'
+              ]
+            },
+            {
+              id: '2.2-t6-r10',
+              cells: [
+                'Gestação',
+                '**Metildopa, nifedipino e hidralazina**',
+                '**IECA, BRA, alisquireno e espironolactona são contraindicados**'
+              ]
+            },
+            {
+              id: '2.2-t6-r11',
+              cells: [
+                'Asma e DPOC',
+                'IECA/BRA, bloqueador de cálcio, tiazídico',
+                '**Betabloqueadores** (sobretudo não seletivos)'
+              ]
+            },
+            {
+              id: '2.2-t6-r12',
+              cells: [
+                'Gota',
+                'Losartana (efeito uricosúrico), bloqueador de cálcio',
+                'Evitar tiazídicos e diuréticos de alça'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.2-t7',
+          subheading: 'Observações sobre as doses (*)',
+          headers: ['Tópico', 'Conteúdo'],
+          rows: [
+            {
+              id: '2.2-t7-r1',
+              cells: [
+                'Como usar',
+                '*As doses são **valores usuais de referência** para estudo, com base no material tradicional e nas diretrizes; conferir sempre a **bula** e a **diretriz vigente**, ajustando a idade, função renal, comorbidades e interações.'
+              ]
+            }
+          ]
         }
       ]
     },
@@ -211,6 +1235,55 @@ export const chapter2: Chapter = {
               cells: [
                 'Tratamento e conduta',
                 'Otimizar diurético (clortalidona ou indapamida; alça se taxa de filtração <30); **espironolactona 25–50 mg como quarto fármaco de escolha** (eplerenona se ginecomastia), com vigilância do potássio; quinto fármaco: betabloqueador, depois simpatolítico central (clonidina), alfabloqueador, hidralazina ou minoxidil. **Refratária** responde melhor a simpatolíticos, betabloqueadores e alfabloqueadores; **denervação renal** em casos selecionados. Tratar a causa secundária.'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.3-t2',
+          subheading: 'Pensar em hipertensão resistente: definição tradicional e o que investigar',
+          headers: ['Tópico', 'Conteúdo'],
+          rows: [
+            {
+              id: '2.3-t2-r1',
+              cells: [
+                'Definição tradicional',
+                'Falta de resposta ao tratamento com **3 classes de fármacos distintas, sendo necessariamente uma delas um diurético**.'
+              ]
+            },
+            {
+              id: '2.3-t2-r2',
+              cells: [
+                'Diante de má resposta, pensar em',
+                '1) **Falta de aderência ao tratamento**; 2) **efeito do avental branco** (confirmar por MRPA/MAPA); 3) **hipertensão arterial secundária**, isto é, com condição subjacente específica identificada (hiperaldosteronismo, apneia do sono, doença renovascular, feocromocitoma, Cushing, doença renal).'
+              ]
+            }
+          ]
+        },
+        {
+          id: '2.3-t3',
+          subheading: 'Quando internar e seguimento',
+          headers: ['Tópico', 'Conteúdo'],
+          rows: [
+            {
+              id: '2.3-t3-r1',
+              cells: [
+                'Quando internar',
+                '**Emergência hipertensiva** (elevação acentuada com lesão aguda de órgão-alvo: encefalopatia, dissecção de aorta, edema agudo de pulmão, infarto, AVC, pré-eclâmpsia grave/eclâmpsia, lesão renal aguda); **hipertensão estágio 3 sintomática** ou sem acesso a controle ambulatorial; intolerância à via oral; gestante com PA ≥160/110. Ver 2.10.'
+              ]
+            },
+            {
+              id: '2.3-t3-r2',
+              cells: [
+                'Seguimento',
+                'Retornos frequentes (**mensais ou a cada 2–4 semanas**) até atingir a meta; depois a cada **3–6 meses**. Em cada visita: **adesão, efeitos adversos, medidas não medicamentosas** e medida correta da pressão (MRPA/MAPA quando possível). Exames anuais: **creatinina/TFG, potássio, glicemia, perfil lipídico, albuminúria, eletrocardiograma**. Após iniciar IECA/BRA/diurético: dosar creatinina e potássio em 1–2 semanas.'
+              ]
+            },
+            {
+              id: '2.3-t3-r3',
+              cells: [
+                'Exemplo didático de prescrição ambulatorial',
+                'Iniciando combinação dupla em comprimido único: **losartana 50 mg + anlodipino 5 mg, 1 comprimido VO pela manhã**; ajustar a dose ou acrescentar **clortalidona 12,5 mg** se fora da meta; **espironolactona 25 mg** como quarto fármaco. Orientar dieta com pouco sal, atividade física e retorno em 2–4 semanas.'
               ]
             }
           ]

@@ -8,6 +8,9 @@ import { chapter6 } from './chapter6';
 import { chapter7 } from './chapter7';
 import { chapter8 } from './chapter8';
 import { chapter9 } from './chapter9';
+import { chapter10 } from './chapter10';
+import { chapter11 } from './chapter11';
+import { chapter12 } from './chapter12';
 
 export const allChapters: Chapter[] = [
   chapter1,
@@ -18,7 +21,10 @@ export const allChapters: Chapter[] = [
   chapter6,
   chapter7,
   chapter8,
-  chapter9
+  chapter9,
+  chapter10,
+  chapter11,
+  chapter12
 ];
 
 export const allTopics: MedicalTopic[] = allChapters.flatMap(c => c.topics);
