@@ -228,17 +228,17 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-fadeIn"
       onClick={onClose}
     >
       <div
-        className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl max-w-lg w-full p-4 sm:p-6 shadow-2xl text-zinc-900 dark:text-zinc-100 my-auto"
+        className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl max-w-lg w-full p-4 sm:p-6 shadow-sm text-zinc-900 dark:text-zinc-100 my-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-200 dark:border-zinc-800">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-emerald-600/10 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-500/30">
+            <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 flex items-center justify-center shrink-0 border border-zinc-200 dark:border-zinc-700">
               <FileSpreadsheet className="w-4 h-4" />
             </div>
             <div>
@@ -295,7 +295,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
 
         {/* STATE 1: Mandatory Workspace Destructive / Mutation Confirmation Dialog */}
         {pendingConfirmation ? (
-          <div className="p-4 bg-zinc-50 dark:bg-zinc-850/80 border border-zinc-200 dark:border-zinc-750 rounded-lg space-y-3 animate-fadeIn">
+          <div className="p-4 bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-750 rounded-lg space-y-3 animate-fadeIn">
             <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 font-bold text-sm">
               <ShieldCheck className="w-4 h-4 text-zinc-900 dark:text-zinc-100 shrink-0" />
               <span>Confirmar Ação no Google Sheets</span>

@@ -26,6 +26,8 @@ html {
   background-color: var(--bg-app);
   color: var(--fg-app);
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -36,6 +38,8 @@ body {
   color: var(--fg-app);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Custom scrollbar for mobile cleanliness */

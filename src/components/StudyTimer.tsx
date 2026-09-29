@@ -98,7 +98,7 @@ export const StudyTimer: React.FC = () => {
 
       {/* Popover Dropdown Panel */}
       {isOpen && (
-        <div className="absolute right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 top-full mt-2 w-72 sm:w-80 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-2xl z-50 animate-fadeIn text-zinc-900 dark:text-zinc-100 space-y-4">
+        <div className="absolute right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 top-full mt-2 w-72 sm:w-80 max-w-[calc(100vw-1.5rem)] bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm z-50 animate-fadeIn text-zinc-900 dark:text-zinc-100 space-y-4">
           {/* Header of popover */}
           <div className="flex items-center justify-between pb-2 border-b border-zinc-100 dark:border-zinc-800 text-xs">
             <div className="flex items-center gap-1.5 font-semibold text-zinc-800 dark:text-zinc-200">

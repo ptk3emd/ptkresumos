@@ -1,4 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import { TopicReminder } from '../types/clinical';
+import { addDaysToDate, getTodayDateString, isReminderDue } from '../utils/reviewUtils';
 
 const STORAGE_KEYS = {
   OVERRIDES: 'clinica_cell_overrides_v1',
@@ -6,6 +8,7 @@ const STORAGE_KEYS = {
   HIDDEN: 'clinica_hidden_cells_v1',
   BOOKMARKS: 'clinica_bookmarks_v1',
   STUDIED: 'clinica_studied_topics_v1',
+  REMINDERS: 'clinica_review_reminders_v1',
   VIEW_MODE: 'clinica_view_mode_v1',
   LAST_TOPIC: 'clinica_last_topic_v1',
   THEME: 'clinica_theme_v1'
@@ -44,6 +47,9 @@ export function useClinicalStorage() {
   );
   const [studiedTopics, setStudiedTopics] = useState<string[]>(() =>
     safeGetJSON(STORAGE_KEYS.STUDIED, [])
+  );
+  const [reminders, setReminders] = useState<Record<string, TopicReminder>>(() =>
+    safeGetJSON(STORAGE_KEYS.REMINDERS, {})
   );
   const [viewMode, setViewModeState] = useState<'single' | 'all'>(() =>
     safeGetJSON(STORAGE_KEYS.VIEW_MODE, 'single')
@@ -94,6 +100,10 @@ export function useClinicalStorage() {
   useEffect(() => {
     safeSetJSON(STORAGE_KEYS.STUDIED, studiedTopics);
   }, [studiedTopics]);
+
+  useEffect(() => {
+    safeSetJSON(STORAGE_KEYS.REMINDERS, reminders);
+  }, [reminders]);
 
   const setViewMode = useCallback((mode: 'single' | 'all') => {
     setViewModeState(mode);
@@ -168,6 +178,60 @@ export function useClinicalStorage() {
     );
   }, []);
 
+  const scheduleReview = useCallback((topicId: string, daysOrDate: number | string) => {
+    const today = getTodayDateString();
+    const dueDate = typeof daysOrDate === 'number' ? addDaysToDate(daysOrDate, today) : daysOrDate;
+    const intervalDays = typeof daysOrDate === 'number' ? daysOrDate : undefined;
+
+    setReminders(prev => ({
+      ...prev,
+      [topicId]: {
+        topicId,
+        dueDate,
+        scheduledAt: new Date().toISOString(),
+        intervalDays
+      }
+    }));
+  }, []);
+
+  const removeReminder = useCallback((topicId: string) => {
+    setReminders(prev => {
+      const copy = { ...prev };
+      delete copy[topicId];
+      return copy;
+    });
+  }, []);
+
+  const completeReview = useCallback((topicId: string, nextIntervalDays?: number) => {
+    // Mark as studied
+    setStudiedTopics(prev => (prev.includes(topicId) ? prev : [...prev, topicId]));
+
+    if (nextIntervalDays && nextIntervalDays > 0) {
+      const newDueDate = addDaysToDate(nextIntervalDays);
+      setReminders(prev => ({
+        ...prev,
+        [topicId]: {
+          topicId,
+          dueDate: newDueDate,
+          scheduledAt: new Date().toISOString(),
+          intervalDays: nextIntervalDays,
+          lastReviewedAt: new Date().toISOString()
+        }
+      }));
+    } else {
+      // Clear the reminder
+      setReminders(prev => {
+        const copy = { ...prev };
+        delete copy[topicId];
+        return copy;
+      });
+    }
+  }, []);
+
+  const dueTopicIds = useMemo(() => {
+    return Object.keys(reminders).filter(id => isReminderDue(reminders[id].dueDate));
+  }, [reminders]);
+
   const exportData = useCallback(() => {
     const payload = {
       exportDate: new Date().toISOString(),
@@ -175,7 +239,8 @@ export function useClinicalStorage() {
       notes,
       hiddenCells,
       bookmarks,
-      studiedTopics
+      studiedTopics,
+      reminders
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -184,7 +249,7 @@ export function useClinicalStorage() {
     a.download = `resumo_clinica_medica_backup_${new Date().toISOString().slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [overrides, notes, hiddenCells, bookmarks, studiedTopics]);
+  }, [overrides, notes, hiddenCells, bookmarks, studiedTopics, reminders]);
 
   const importData = useCallback((jsonString: string) => {
     try {
@@ -204,6 +269,11 @@ export function useClinicalStorage() {
       if (Array.isArray(data.studiedTopics)) {
         setStudiedTopics(data.studiedTopics);
       }
+      if (data.reminders && typeof data.reminders === 'object') {
+        setReminders(data.reminders);
+      } else if (data.reviewReminders && typeof data.reviewReminders === 'object') {
+        setReminders(data.reviewReminders);
+      }
       return { success: true };
     } catch (e) {
       console.error('Import error:', e);
@@ -217,11 +287,13 @@ export function useClinicalStorage() {
     setHiddenCells([]);
     setBookmarks([]);
     setStudiedTopics([]);
+    setReminders({});
     localStorage.removeItem(STORAGE_KEYS.OVERRIDES);
     localStorage.removeItem(STORAGE_KEYS.NOTES);
     localStorage.removeItem(STORAGE_KEYS.HIDDEN);
     localStorage.removeItem(STORAGE_KEYS.BOOKMARKS);
     localStorage.removeItem(STORAGE_KEYS.STUDIED);
+    localStorage.removeItem(STORAGE_KEYS.REMINDERS);
   }, []);
 
   return {
@@ -234,6 +306,9 @@ export function useClinicalStorage() {
     bookmarks: new Set(bookmarks),
     studiedTopics: new Set(studiedTopics),
     studiedCount: studiedTopics.length,
+    reminders,
+    dueTopicIds: new Set(dueTopicIds),
+    dueCount: dueTopicIds.length,
     viewMode,
     setViewMode,
     activeTopicId,
@@ -249,6 +324,9 @@ export function useClinicalStorage() {
     setCellNote,
     toggleBookmark,
     toggleStudiedTopic,
+    scheduleReview,
+    removeReminder,
+    completeReview,
     exportData,
     importData,
     resetAllData

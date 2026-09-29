@@ -1,7 +1,8 @@
 import React from 'react';
-import { Bookmark, Eye, EyeOff, Info, ArrowUp, CheckCircle2 } from 'lucide-react';
-import { Chapter, MedicalTopic } from '../types/clinical';
+import { Bookmark, Eye, EyeOff, Info, ArrowUp, CheckCircle2, Bell } from 'lucide-react';
+import { Chapter, MedicalTopic, TopicReminder } from '../types/clinical';
 import { MedicalTableView } from './MedicalTableView';
+import { formatDueStatus, isReminderDue } from '../utils/reviewUtils';
 
 interface AllTopicsViewProps {
   chapters: Chapter[];
@@ -12,6 +13,7 @@ interface AllTopicsViewProps {
   hiddenCells: Set<string>;
   bookmarks: Set<string>;
   studiedTopics: Set<string>;
+  reminders?: Record<string, TopicReminder>;
   onToggleBookmark: (topicId: string) => void;
   onToggleStudied: (topicId: string) => void;
   onToggleHideCell: (cellId: string) => void;
@@ -21,6 +23,7 @@ interface AllTopicsViewProps {
   onResetOverride: (cellId: string) => void;
   onSaveNote: (cellId: string, note: string) => void;
   onSwitchToSingleTopic: (topicId: string) => void;
+  onOpenScheduleReview?: (topicId: string) => void;
 }
 
 export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
@@ -32,6 +35,7 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
   hiddenCells,
   bookmarks,
   studiedTopics,
+  reminders = {},
   onToggleBookmark,
   onToggleStudied,
   onToggleHideCell,
@@ -40,7 +44,8 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
   onSaveOverride,
   onResetOverride,
   onSaveNote,
-  onSwitchToSingleTopic
+  onSwitchToSingleTopic,
+  onOpenScheduleReview
 }) => {
   const filteredTopicIds = new Set(filteredTopics.map(t => t.id));
 
@@ -95,6 +100,9 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
               {chapterTopics.map(topic => {
                 const isBookmarked = bookmarks.has(topic.id);
                 const isStudied = studiedTopics.has(topic.id);
+                const topicReminder = reminders[topic.id];
+                const isDue = topicReminder ? isReminderDue(topicReminder.dueDate) : false;
+                const topicDueStatus = topicReminder ? formatDueStatus(topicReminder.dueDate) : null;
 
                 // Collect content cells for knowledge check in this topic
                 const topicContentCellIds = topic.tables.flatMap(t =>
@@ -115,7 +123,7 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
                     id={`topic-${topic.id}`}
                     className={`p-3.5 sm:p-4 rounded-lg border transition-colors shadow-2xs space-y-2.5 ${
                       isStudied
-                        ? 'bg-zinc-50/70 dark:bg-zinc-900/90 border-zinc-300 dark:border-zinc-700'
+                        ? 'bg-zinc-50 dark:bg-zinc-900 border-zinc-300 dark:border-zinc-700'
                         : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800'
                     }`}
                   >
@@ -133,7 +141,32 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
                       </div>
 
                       <div className="flex items-center gap-1.5 shrink-0">
-                        {/* Studied / Reviewed Button */}
+                        {/* Review Reminder Button */}
+                        {onOpenScheduleReview && (
+                          <button
+                            type="button"
+                            onClick={() => onOpenScheduleReview(topic.id)}
+                            className={`flex items-center gap-1 px-2 py-0.5 text-xs rounded border transition-colors cursor-pointer ${
+                              isDue
+                                ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 font-bold shadow-2xs'
+                                : topicReminder
+                                  ? 'bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border-zinc-300 dark:border-zinc-700 font-medium'
+                                  : 'bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700 hover:text-black dark:hover:text-white'
+                            }`}
+                            title={
+                              topicReminder
+                                ? `Revisão: ${topicDueStatus?.label}. Clique para gerenciar.`
+                                : 'Agendar lembrete de revisão de acompanhamento'
+                            }
+                          >
+                            <Bell className={`w-3 h-3 ${topicReminder ? 'fill-current' : ''}`} />
+                            <span className="hidden sm:inline">
+                              {isDue ? 'Revisar hoje' : topicReminder ? topicDueStatus?.badgeLabel : 'Revisar'}
+                            </span>
+                          </button>
+                        )}
+
+                        {/* Studied / Completed Button */}
                         <button
                           type="button"
                           onClick={() => onToggleStudied(topic.id)}
@@ -142,10 +175,10 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
                               ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-zinc-900 dark:border-zinc-100 font-semibold'
                               : 'bg-zinc-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border-zinc-200 dark:border-zinc-700 hover:text-black dark:hover:text-white'
                           }`}
-                          title={isStudied ? 'Desmarcar tema como revisado' : 'Marcar tema como estudado/revisado'}
+                          title={isStudied ? 'Desmarcar tema como concluído' : 'Marcar tema como concluído'}
                         >
                           <CheckCircle2 className={`w-3 h-3 ${isStudied ? 'fill-current' : ''}`} />
-                          <span className="hidden sm:inline">{isStudied ? 'Revisado' : 'Estudar'}</span>
+                          <span className="hidden sm:inline">{isStudied ? 'Concluído' : 'Concluir'}</span>
                         </button>
 
                         {/* Focus / Single View Button */}
@@ -240,7 +273,7 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
       <button
         type="button"
         onClick={scrollToTop}
-        className="fixed bottom-5 right-5 z-20 flex items-center justify-center p-2.5 bg-zinc-900/90 dark:bg-zinc-100/90 text-white dark:text-zinc-900 rounded-full shadow-md hover:bg-black dark:hover:bg-white text-xs backdrop-blur-xs transition-colors"
+        className="fixed bottom-5 right-5 z-20 flex items-center justify-center p-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full shadow-sm hover:bg-black dark:hover:white text-xs transition-colors"
         title="Voltar ao topo"
         aria-label="Voltar ao topo"
       >

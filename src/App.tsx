@@ -9,6 +9,8 @@ import { TableOfContentsDrawer } from './components/TableOfContentsDrawer';
 import { BackupModal } from './components/BackupModal';
 import { GoogleSheetsModal } from './components/GoogleSheetsModal';
 import { StudyTimer } from './components/StudyTimer';
+import { DueReviewsDrawer } from './components/DueReviewsDrawer';
+import { ReviewScheduleModal } from './components/ReviewScheduleModal';
 import {
   BookOpen,
   SearchX,
@@ -29,6 +31,9 @@ export default function App() {
     bookmarks,
     studiedTopics,
     studiedCount,
+    reminders,
+    dueTopicIds,
+    dueCount,
     viewMode,
     setViewMode,
     activeTopicId,
@@ -44,6 +49,9 @@ export default function App() {
     setCellNote,
     toggleBookmark,
     toggleStudiedTopic,
+    scheduleReview,
+    removeReminder,
+    completeReview,
     exportData,
     importData,
     resetAllData
@@ -54,6 +62,8 @@ export default function App() {
   const [isTocOpen, setIsTocOpen] = useState(false);
   const [isBackupOpen, setIsBackupOpen] = useState(false);
   const [isSheetsOpen, setIsSheetsOpen] = useState(false);
+  const [isReviewsDrawerOpen, setIsReviewsDrawerOpen] = useState(false);
+  const [reviewScheduleTopicId, setReviewScheduleTopicId] = useState<string | null>(null);
   const [isFocusMode, setIsFocusMode] = useState(false);
 
   // Exit focus mode with Escape key
@@ -127,23 +137,41 @@ export default function App() {
   }, [activeTopicId, filteredTopics]);
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors selection:bg-zinc-300 selection:text-black dark:selection:bg-zinc-700 dark:selection:text-white">
-      {/* Discreet floating exit button when in Zen / Focus Mode */}
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors selection:bg-zinc-300 selection:text-black dark:selection:bg-zinc-700 dark:selection:text-white w-full max-w-full overflow-x-hidden">
+      {/* Zen / Focus Mode: Dedicated Clean Top Bar (Never Overlaps Text/Content) */}
       {isFocusMode ? (
-        <div className="fixed top-3 right-3 sm:top-4 sm:right-6 z-50 animate-fadeIn">
-          <button
-            type="button"
-            onClick={() => setIsFocusMode(false)}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/90 hover:bg-black text-white dark:bg-zinc-100/90 dark:hover:bg-white dark:text-zinc-900 backdrop-blur rounded-lg text-xs font-semibold shadow-lg transition-all opacity-80 hover:opacity-100"
-            title="Sair do Modo Zen (Esc)"
-          >
-            <Minimize2 className="w-3.5 h-3.5" />
-            <span>Sair do Modo Zen</span>
-            <kbd className="hidden sm:inline ml-1 px-1 py-0.2 text-[9px] bg-white/20 dark:bg-black/20 rounded font-mono">
-              ESC
-            </kbd>
-          </button>
-        </div>
+        <header className="sticky top-0 z-30 bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 transition-colors shadow-2xs w-full">
+          <div className="max-w-5xl mx-auto px-3 sm:px-6 h-12 flex items-center justify-between gap-2 sm:gap-3">
+            {/* Minimal Topic Indicator */}
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <span className="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-850 text-zinc-700 dark:text-zinc-300 text-[11px] font-bold uppercase tracking-wider shrink-0 border border-zinc-200 dark:border-zinc-800">
+                Zen
+              </span>
+              <span className="text-xs sm:text-sm font-bold text-zinc-900 dark:text-zinc-100 truncate">
+                {currentTopic.title}
+              </span>
+            </div>
+
+            {/* Exit Zen Button */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={() => setIsFocusMode(false)}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 bg-zinc-900 hover:bg-black text-white dark:bg-zinc-100 dark:hover:bg-white dark:text-zinc-900 rounded-md text-xs font-semibold border border-zinc-800 dark:border-zinc-200 shadow-2xs transition-colors cursor-pointer"
+                title="Sair do Modo Zen (Esc)"
+              >
+                <Minimize2 className="w-3.5 h-3.5 shrink-0" />
+                <span>
+                  <span className="sm:hidden">Sair</span>
+                  <span className="hidden sm:inline">Sair do Modo Zen</span>
+                </span>
+                <kbd className="hidden sm:inline ml-1 px-1 py-0.2 text-[9px] bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded font-mono">
+                  ESC
+                </kbd>
+              </button>
+            </div>
+          </div>
+        </header>
       ) : (
         <Header
           viewMode={viewMode}
@@ -159,6 +187,9 @@ export default function App() {
           notesCount={notesCount}
           studiedCount={studiedCount}
           totalTopics={allTopics.length}
+          dueReviewsCount={dueCount}
+          totalScheduledReviewsCount={Object.keys(reminders).length}
+          onOpenReviews={() => setIsReviewsDrawerOpen(true)}
         />
       )}
 
@@ -269,6 +300,8 @@ export default function App() {
               onSaveOverride={setCellOverride}
               onResetOverride={resetCellOverride}
               onSaveNote={setCellNote}
+              reminder={reminders[currentTopic.id]}
+              onOpenScheduleReview={() => setReviewScheduleTopicId(currentTopic.id)}
             />
           </div>
         ) : (
@@ -282,6 +315,7 @@ export default function App() {
             hiddenCells={hiddenCells}
             bookmarks={bookmarks}
             studiedTopics={studiedTopics}
+            reminders={reminders}
             onToggleBookmark={toggleBookmark}
             onToggleStudied={toggleStudiedTopic}
             onToggleHideCell={toggleHideCell}
@@ -294,6 +328,7 @@ export default function App() {
               setActiveTopicId(topicId);
               setViewMode('single');
             }}
+            onOpenScheduleReview={topicId => setReviewScheduleTopicId(topicId)}
           />
         )}
       </main>
@@ -352,6 +387,32 @@ export default function App() {
         overrides={overrides}
         notes={notes}
         studiedTopics={studiedTopics}
+      />
+
+      {/* Due Reviews Follow-up Drawer */}
+      <DueReviewsDrawer
+        isOpen={isReviewsDrawerOpen}
+        onClose={() => setIsReviewsDrawerOpen(false)}
+        allTopics={allTopics}
+        reminders={reminders}
+        onSelectTopic={id => {
+          setActiveTopicId(id);
+          setViewMode('single');
+        }}
+        onCompleteReview={completeReview}
+        onOpenScheduleModal={id => setReviewScheduleTopicId(id)}
+        onRemoveReminder={removeReminder}
+      />
+
+      {/* Review Schedule / Edit Modal */}
+      <ReviewScheduleModal
+        isOpen={reviewScheduleTopicId !== null}
+        onClose={() => setReviewScheduleTopicId(null)}
+        topic={reviewScheduleTopicId ? findTopicById(reviewScheduleTopicId) || null : null}
+        reminder={reviewScheduleTopicId ? reminders[reviewScheduleTopicId] : undefined}
+        onSchedule={scheduleReview}
+        onRemoveReminder={removeReminder}
+        onCompleteReview={completeReview}
       />
     </div>
   );

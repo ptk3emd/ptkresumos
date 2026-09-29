@@ -157,8 +157,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           onFocus={() => setIsInputActive(true)}
           onChange={e => onSearchChange(e.target.value)}
           onKeyDown={handleKeyDownInput}
-          placeholder="Buscar tema, fármaco, conduta, exame... (Pressione / para buscar)"
-          className="w-full pl-9 pr-8 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:focus:ring-zinc-100 transition-colors shadow-2xs"
+          placeholder="Buscar temas, condutas, fármacos, exames..."
+          className="w-full pl-9 pr-8 py-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 text-xs sm:text-sm focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors"
         />
         {searchQuery && (
           <button
@@ -176,7 +176,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
         {/* Recent Searches Dropdown Popover */}
         {isInputActive && (
-          <div className="absolute top-full left-0 right-0 z-40 mt-1.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-xl overflow-hidden animate-fadeIn">
+          <div className="absolute top-full left-0 right-0 z-40 mt-1.5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden animate-fadeIn">
             {recentSearches.length > 0 ? (
               <div>
                 {/* Header */}
@@ -225,7 +225,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 </div>
 
                 {/* Helper footer */}
-                <div className="px-3 py-1.5 bg-zinc-50/70 dark:bg-zinc-850/70 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[10.5px] text-zinc-400">
+                <div className="px-3 py-1.5 bg-zinc-50 dark:bg-zinc-850 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between text-[10.5px] text-zinc-400">
                   <span>Pressione <kbd className="px-1 py-0.2 bg-zinc-200 dark:bg-zinc-800 rounded font-mono text-[9px] text-zinc-700 dark:text-zinc-300">Enter</kbd> para buscar</span>
                   <span><kbd className="px-1 py-0.2 bg-zinc-200 dark:bg-zinc-800 rounded font-mono text-[9px] text-zinc-700 dark:text-zinc-300">Esc</kbd> para fechar</span>
                 </div>
@@ -256,14 +256,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       </div>
 
       {/* Chapter Filter Pills (Horizontal Scrollable) */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs scrollbar-none">
+      <div className="flex items-center gap-1 overflow-x-auto pb-1 text-xs scrollbar-none">
         <button
           type="button"
           onClick={() => onSelectChapter(null)}
-          className={`px-2.5 py-1 rounded-md whitespace-nowrap text-[11.5px] transition-colors shrink-0 ${
+          className={`px-2.5 py-1 rounded-md whitespace-nowrap text-xs transition-colors shrink-0 ${
             selectedChapterId === null
               ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-              : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+              : 'text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
           }`}
         >
           Todos ({totalTopics})
@@ -274,10 +274,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             key={chapter.id}
             type="button"
             onClick={() => onSelectChapter(selectedChapterId === chapter.id ? null : chapter.id)}
-            className={`px-2.5 py-1 rounded-md whitespace-nowrap text-[11.5px] transition-colors shrink-0 ${
+            className={`px-2.5 py-1 rounded-md whitespace-nowrap text-xs transition-colors shrink-0 ${
               selectedChapterId === chapter.id
                 ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                : 'bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                : 'text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
             }`}
           >
             {chapter.id}. {chapter.shortTitle}

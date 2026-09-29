@@ -67,7 +67,7 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
             {table.rows.map(row => (
               <tr
                 key={row.id}
-                className="even:bg-zinc-50/60 dark:even:bg-zinc-900/30 transition-colors"
+                className="even:bg-zinc-50 dark:even:bg-zinc-900 transition-colors"
               >
                 {row.cells.map((defaultText, colIdx) => {
                   const cellId = `${row.id}-c${colIdx}`;

@@ -36,9 +36,9 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
   const normalizedFilter = filterText.toLowerCase().trim();
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/50 backdrop-blur-xs animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex justify-end bg-black/50 animate-fadeIn">
       <div
-        className="w-full max-w-sm sm:max-w-md bg-white dark:bg-zinc-950 h-full shadow-2xl flex flex-col border-l border-zinc-200 dark:border-zinc-800"
+        className="w-full max-w-sm sm:max-w-md bg-white dark:bg-zinc-950 h-full shadow-none flex flex-col border-l border-zinc-200 dark:border-zinc-800"
         role="dialog"
         aria-modal="true"
       >
@@ -184,7 +184,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
                           isActive
                             ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
                             : isStudied
-                            ? 'bg-zinc-100/60 dark:bg-zinc-900/60 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                            ? 'bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-850'
                             : 'hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-800 dark:text-zinc-200'
                         }`}
                       >

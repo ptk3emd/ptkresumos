@@ -64,7 +64,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
     return (
       <td
         ref={cellRef}
-        className="align-top px-3 py-2.5 font-semibold text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-900/90 border-b border-zinc-200 dark:border-zinc-800 text-[12.5px] sm:text-[13px] select-text sm:whitespace-nowrap transition-colors"
+        className="align-top px-3 py-2.5 font-semibold text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 text-[12.5px] sm:text-[13px] select-text sm:whitespace-nowrap transition-colors"
       >
         <span className="leading-snug">{currentContent}</span>
       </td>
@@ -158,8 +158,8 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
       title="Toque duplo para ocultar ou revelar"
       className={`group relative align-top px-3 py-2.5 sm:px-3.5 sm:py-3 border-b border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-zinc-100 transition-colors text-[13.5px] sm:text-[14px] leading-relaxed cursor-pointer select-text ${
         isActive
-          ? 'bg-zinc-100/60 dark:bg-zinc-900 ring-1 ring-inset ring-zinc-400 dark:ring-zinc-600'
-          : 'bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/60'
+          ? 'bg-zinc-100 dark:bg-zinc-900 ring-1 ring-inset ring-zinc-400 dark:ring-zinc-600'
+          : 'bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900'
       }`}
     >
       {/* Masked / Hidden Active Recall State */}
@@ -210,7 +210,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
             e.stopPropagation();
             setIsNoteEditorOpen(true);
           }}
-          className="mt-2 p-2 bg-zinc-100 dark:bg-zinc-900 border-l-2 border-zinc-900 dark:border-zinc-100 rounded-r text-xs cursor-pointer hover:bg-zinc-200/80 dark:hover:bg-zinc-850 transition-colors"
+          className="mt-2 p-2 bg-zinc-100 dark:bg-zinc-900 border-l-2 border-zinc-900 dark:border-zinc-100 rounded-r text-xs cursor-pointer hover:bg-zinc-200 dark:hover:bg-zinc-850 transition-colors"
         >
           <div className="flex items-center justify-between mb-0.5">
             <span className="font-semibold text-zinc-900 dark:text-zinc-100 text-[10.5px] uppercase tracking-wider flex items-center gap-1">

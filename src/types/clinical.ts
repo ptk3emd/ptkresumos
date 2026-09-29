@@ -26,9 +26,18 @@ export interface Chapter {
   topics: MedicalTopic[];
 }
 
+export interface TopicReminder {
+  topicId: string;
+  dueDate: string; // YYYY-MM-DD
+  scheduledAt: string; // ISO date string
+  intervalDays?: number;
+  lastReviewedAt?: string;
+}
+
 export interface UserCustomData {
   cellOverrides: Record<string, string>; // cellId -> custom Markdown
   cellNotes: Record<string, string>; // cellId -> notes Markdown
   hiddenCells: string[]; // array of cellIds that are currently masked
   bookmarkedTopics: string[]; // array of topic ids
+  reviewReminders?: Record<string, TopicReminder>; // topicId -> TopicReminder
 }
