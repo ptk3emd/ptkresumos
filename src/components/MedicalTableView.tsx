@@ -108,8 +108,8 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
                 <RotateCcw className="w-3 h-3" /> Restaurar padrão
               </button>
             </div>
-            </div>
-      )}
+          )}
+        </div>
 
       {/* Mobile scroll hint for wider tables */}
       {hasMultipleColumns && (
