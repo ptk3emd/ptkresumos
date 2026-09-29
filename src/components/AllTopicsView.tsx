@@ -83,13 +83,13 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
                 >
                   <CheckCircle2 className="w-3 h-3 text-zinc-900 dark:text-zinc-100 shrink-0" />
                   <span>{studiedInChapter}/{totalInChapter} revisados</span>
-                  <span className="text-[10px] text-zinc-400">({chapterPercent}%)</span>
+                  <span className="text-[10px] text-zinc-600">({chapterPercent}%)</span>
                 </div>
               </div>
 
               {chapter.note && (
                 <div className="p-2.5 bg-zinc-100 dark:bg-zinc-900 border-l-2 border-zinc-800 dark:border-zinc-200 rounded-r text-xs text-zinc-700 dark:text-zinc-300 flex items-start gap-2">
-                  <Info className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 shrink-0 mt-0.5" />
+                  <Info className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-300 shrink-0 mt-0.5" />
                   <p className="leading-relaxed">{chapter.note}</p>
                 </div>
               )}
@@ -198,7 +198,7 @@ export const AllTopicsView: React.FC<AllTopicsViewProps> = ({
                           className={`p-1 rounded border transition-colors ${
                             isBookmarked
                               ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-zinc-900 dark:border-zinc-100'
-                              : 'bg-zinc-50 dark:bg-zinc-800 text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:text-black dark:hover:text-white'
+                              : 'bg-zinc-50 dark:bg-zinc-800 text-zinc-600 border-zinc-200 dark:border-zinc-700 hover:text-black dark:hover:text-white'
                           }`}
                           title={isBookmarked ? 'Remover dos favoritos' : 'Favoritar'}
                         >

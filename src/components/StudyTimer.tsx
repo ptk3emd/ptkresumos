@@ -102,13 +102,13 @@ export const StudyTimer: React.FC = () => {
           {/* Header of popover */}
           <div className="flex items-center justify-between pb-2 border-b border-zinc-100 dark:border-zinc-800 text-xs">
             <div className="flex items-center gap-1.5 font-semibold text-zinc-800 dark:text-zinc-200">
-              <Clock className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
+              <Clock className="w-4 h-4 text-zinc-600 dark:text-zinc-300" />
               <span>Temporizador de Estudo</span>
             </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="text-zinc-400 hover:text-black dark:hover:text-white p-0.5 rounded"
+              className="text-zinc-600 hover:text-black dark:hover:text-white p-0.5 rounded"
               aria-label="Fechar temporizador"
             >
               <X className="w-4 h-4" />
@@ -125,7 +125,7 @@ export const StudyTimer: React.FC = () => {
                 className={`py-1 px-1 rounded-md text-[11px] transition-colors text-center truncate ${
                   mode === m
                     ? 'bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-semibold shadow-2xs'
-                    : 'text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
                 }`}
               >
                 {getModeLabel(m)}
@@ -138,7 +138,7 @@ export const StudyTimer: React.FC = () => {
             <div className="text-4xl font-bold font-mono tracking-tight text-zinc-900 dark:text-zinc-100 tabular-nums">
               {formattedTime}
             </div>
-            <div className="text-[11px] font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+            <div className="text-[11px] font-medium text-zinc-600 dark:text-zinc-300 uppercase tracking-wider">
               {mode === 'focus' ? 'Sessão de Foco Clínico' : 'Intervalo para Descanso'}
             </div>
 
@@ -199,7 +199,7 @@ export const StudyTimer: React.FC = () => {
           {/* Session Cumulative Stats Section */}
           <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800 space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-zinc-500 dark:text-zinc-400 font-medium">
+              <span className="text-zinc-600 dark:text-zinc-300 font-medium">
                 Estudo ativo nesta sessão:
               </span>
               <span className="font-bold text-zinc-900 dark:text-zinc-100 tabular-nums">
@@ -208,7 +208,7 @@ export const StudyTimer: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between text-xs">
-              <span className="text-zinc-500 dark:text-zinc-400 font-medium">
+              <span className="text-zinc-600 dark:text-zinc-300 font-medium">
                 Ciclos concluídos:
               </span>
               <div className="flex items-center gap-1.5">
@@ -234,7 +234,7 @@ export const StudyTimer: React.FC = () => {
                 <button
                   type="button"
                   onClick={resetSessionStats}
-                  className="text-[10px] text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 hover:underline"
+                  className="text-[10px] text-zinc-600 hover:text-zinc-600 dark:hover:text-zinc-200 hover:underline"
                 >
                   Zerar métricas da sessão
                 </button>

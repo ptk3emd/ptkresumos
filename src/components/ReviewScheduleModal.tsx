@@ -75,7 +75,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1 text-zinc-400 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
+            className="p-1 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
             aria-label="Fechar modal"
           >
             <X className="w-4 h-4" />
@@ -86,7 +86,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
         <div className="p-4 sm:p-5 space-y-4">
           {/* Topic Context */}
           <div className="p-3 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg space-y-1">
-            <p className="text-[10.5px] uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400">
+            <p className="text-[10.5px] uppercase tracking-wider font-semibold text-zinc-600 dark:text-zinc-300">
               {topic.chapterTitle}
             </p>
             <h4 className="text-sm font-bold text-zinc-950 dark:text-zinc-50 leading-snug">
@@ -133,7 +133,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                   className={`flex items-center gap-1 py-1.5 px-2.5 rounded text-xs transition-colors cursor-pointer ${
                     dueStatus.isDue
                       ? 'text-zinc-300 dark:text-zinc-600 hover:text-white dark:hover:text-zinc-900'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800'
+                      : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800'
                   }`}
                   title="Remover agendamento deste tema"
                 >
@@ -146,7 +146,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
 
           {/* Quick Schedule Options */}
           <div className="space-y-2">
-            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
               {reminder ? 'Reagendar para:' : 'Programar lembrete em:'}
             </label>
 
@@ -157,7 +157,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Amanhã</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">+1 dia</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">+1 dia</div>
               </button>
 
               <button
@@ -166,7 +166,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Em 3 dias</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">Revisão rápida</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">Revisão rápida</div>
               </button>
 
               <button
@@ -175,7 +175,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Em 7 dias</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">1 semana</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">1 semana</div>
               </button>
 
               <button
@@ -184,7 +184,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Em 14 dias</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">2 semanas</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">2 semanas</div>
               </button>
 
               <button
@@ -193,7 +193,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Em 30 dias</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">1 mês</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">1 mês</div>
               </button>
 
               <button
@@ -202,7 +202,7 @@ export const ReviewScheduleModal: React.FC<ReviewScheduleModalProps> = ({
                 className="p-2 text-left bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs transition-colors group cursor-pointer"
               >
                 <div className="font-bold text-zinc-900 dark:text-zinc-100">Em 60 dias</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400">2 meses</div>
+                <div className="text-[11px] text-zinc-600 dark:text-zinc-300">2 meses</div>
               </button>
             </div>
           </div>

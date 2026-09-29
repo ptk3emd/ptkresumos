@@ -66,14 +66,14 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <h3 className="text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-100">
               Editar Célula
             </h3>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400 truncate max-w-xs sm:max-w-md">
+            <p className="text-xs text-zinc-600 dark:text-zinc-300 truncate max-w-xs sm:max-w-md">
               {topicTitle}
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-zinc-400 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-1.5 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -85,7 +85,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <button
               type="button"
               onClick={() => insertFormatting('**', '**')}
-              className="p-1 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded font-bold"
+              className="p-1 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded font-bold"
               title="Negrito (**)"
             >
               <Bold className="w-3.5 h-3.5" />
@@ -93,7 +93,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <button
               type="button"
               onClick={() => insertFormatting('*', '*')}
-              className="p-1 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded italic"
+              className="p-1 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded italic"
               title="Itálico (*)"
             >
               <Italic className="w-3.5 h-3.5" />
@@ -101,7 +101,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <button
               type="button"
               onClick={() => insertFormatting('- ')}
-              className="p-1 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded"
+              className="p-1 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded"
               title="Lista (- )"
             >
               <List className="w-3.5 h-3.5" />
@@ -109,7 +109,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <button
               type="button"
               onClick={() => insertFormatting('`', '`')}
-              className="p-1 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded"
+              className="p-1 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 rounded"
               title="Código (`)"
             >
               <Code className="w-3.5 h-3.5" />
@@ -123,7 +123,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
               className={`px-2 py-0.5 rounded transition-colors ${
                 activeTab === 'editor'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Editor
@@ -134,7 +134,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
               className={`px-2 py-0.5 rounded transition-colors ${
                 activeTab === 'preview'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Prévia
@@ -194,7 +194,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
               <button
                 type="button"
                 onClick={() => setShowResetConfirm(true)}
-                className="flex items-center gap-1 text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white hover:underline px-1 py-0.5"
+                className="flex items-center gap-1 text-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white hover:underline px-1 py-0.5"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Restaurar original</span>
@@ -206,7 +206,7 @@ export const EditCellModal: React.FC<EditCellModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="px-3 py-1.5 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white rounded"
+              className="px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white rounded"
             >
               Cancelar
             </button>

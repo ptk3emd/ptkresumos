@@ -42,7 +42,7 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
 
       {/* Mobile scroll hint for wider tables */}
       {hasMultipleColumns && (
-        <div className="sm:hidden px-3 py-1 bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-100 dark:border-zinc-800 text-[10.5px] text-zinc-400 dark:text-zinc-500 flex items-center justify-between">
+        <div className="sm:hidden px-3 py-1 bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-100 dark:border-zinc-800 text-[10.5px] text-zinc-600 dark:text-zinc-300 flex items-center justify-between">
           <span>Deslize a tabela para os lados</span>
           <span>→</span>
         </div>
@@ -52,7 +52,7 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
       <div className="overflow-x-auto w-full">
         <table className="w-full min-w-[340px] sm:min-w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr className="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 text-[11px] sm:text-[11.5px] uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-semibold">
+            <tr className="bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 text-[11px] sm:text-[11.5px] uppercase tracking-wider text-zinc-600 dark:text-zinc-300 font-semibold">
               {table.headers.map((header, idx) => (
                 <th
                   key={idx}

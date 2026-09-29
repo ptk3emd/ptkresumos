@@ -75,7 +75,7 @@ export const BackupModal: React.FC<BackupModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-zinc-400 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-1.5 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -104,29 +104,29 @@ export const BackupModal: React.FC<BackupModalProps> = ({
               <span className="block text-base font-bold text-zinc-900 dark:text-zinc-100 tabular-nums">
                 {studiedCount}
               </span>
-              <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Revisados</span>
+              <span className="text-[10px] text-zinc-600 uppercase tracking-wider">Revisados</span>
             </div>
             <div className="p-2 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg">
               <span className="block text-base font-bold text-zinc-900 dark:text-zinc-100 tabular-nums">
                 {notesCount}
               </span>
-              <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Anotações</span>
+              <span className="text-[10px] text-zinc-600 uppercase tracking-wider">Anotações</span>
             </div>
             <div className="p-2 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg">
               <span className="block text-base font-bold text-zinc-900 dark:text-zinc-100 tabular-nums">
                 {overridesCount}
               </span>
-              <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Edições</span>
+              <span className="text-[10px] text-zinc-600 uppercase tracking-wider">Edições</span>
             </div>
             <div className="p-2 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg">
               <span className="block text-base font-bold text-zinc-900 dark:text-zinc-100 tabular-nums">
                 {bookmarksCount}
               </span>
-              <span className="text-[10px] text-zinc-500 uppercase tracking-wider">Favoritos</span>
+              <span className="text-[10px] text-zinc-600 uppercase tracking-wider">Favoritos</span>
             </div>
           </div>
 
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-[11.5px]">
+          <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-[11.5px]">
             Todos os seus dados são salvos com segurança no armazenamento local do seu navegador.
             Exporte uma cópia em JSON para segurança ou para usar em outro dispositivo.
           </p>
@@ -170,7 +170,7 @@ export const BackupModal: React.FC<BackupModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setIsResetConfirming(false)}
-                    className="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white"
+                    className="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white"
                   >
                     Cancelar
                   </button>
@@ -187,7 +187,7 @@ export const BackupModal: React.FC<BackupModalProps> = ({
               <button
                 type="button"
                 onClick={() => setIsResetConfirming(true)}
-                className="flex items-center gap-1.5 text-zinc-500 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white transition-colors"
               >
                 <Trash2 className="w-3.5 h-3.5" />
                 <span>Restaurar dados de fábrica (apagar tudo)</span>

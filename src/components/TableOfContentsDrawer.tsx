@@ -53,7 +53,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-zinc-400 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-1.5 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -87,7 +87,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
               className={`py-1 px-1 rounded text-center transition-colors truncate text-[11px] ${
                 activeTab === 'all'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Todos
@@ -98,7 +98,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
               className={`py-1 px-1 rounded text-center transition-colors truncate text-[11px] ${
                 activeTab === 'studied'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Revisados ({studiedCount})
@@ -109,7 +109,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
               className={`py-1 px-1 rounded text-center transition-colors truncate text-[11px] ${
                 activeTab === 'pending'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Pendentes ({pendingCount})
@@ -120,7 +120,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
               className={`py-1 px-1 rounded text-center transition-colors truncate text-[11px] ${
                 activeTab === 'bookmarks'
                   ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                  : 'text-zinc-600 dark:text-zinc-400'
+                  : 'text-zinc-600 dark:text-zinc-300'
               }`}
             >
               Favoritos ({bookmarks.size})
@@ -128,13 +128,13 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
           </div>
 
           <div className="relative">
-            <Search className="w-3.5 h-3.5 text-zinc-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-3.5 h-3.5 text-zinc-600 absolute left-2.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={filterText}
               onChange={e => setFilterText(e.target.value)}
               placeholder="Filtrar por nome do tema..."
-              className="w-full pl-8 pr-3 py-1.5 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:focus:ring-zinc-100"
+              className="w-full pl-8 pr-3 py-1.5 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-900 dark:text-zinc-100 placeholder-zinc-500 dark:placeholder-zinc-400 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:focus:ring-zinc-100"
             />
           </div>
         </div>
@@ -164,9 +164,9 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
 
             return (
               <div key={chapter.id} className="space-y-1">
-                <div className="px-2 py-1 text-[11px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider flex items-center justify-between">
+                <div className="px-2 py-1 text-[11px] font-bold text-zinc-600 dark:text-zinc-300 uppercase tracking-wider flex items-center justify-between">
                   <span>{chapter.title}</span>
-                  <span className="font-mono text-[10px] text-zinc-400">
+                  <span className="font-mono text-[10px] text-zinc-600">
                     {chapterStudied}/{chapter.topics.length}
                   </span>
                 </div>
@@ -201,7 +201,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
                                 ? 'text-white dark:text-zinc-900'
                                 : 'text-zinc-900 dark:text-zinc-100'
                               : isActive
-                              ? 'text-zinc-400 dark:text-zinc-600'
+                              ? 'text-zinc-600 dark:text-zinc-600'
                               : 'text-zinc-300 hover:text-zinc-600 dark:text-zinc-600 dark:hover:text-zinc-300'
                           }`}
                           title={isStudied ? 'Desmarcar como estudado' : 'Marcar como estudado/revisado'}
@@ -220,7 +220,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
                         >
                           <span
                             className={`font-mono text-[10.5px] shrink-0 ${
-                              isActive ? 'text-zinc-300 dark:text-zinc-700' : 'text-zinc-400'
+                              isActive ? 'text-zinc-300 dark:text-zinc-700' : 'text-zinc-600'
                             }`}
                           >
                             {topic.id}
@@ -241,7 +241,7 @@ export const TableOfContentsDrawer: React.FC<TableOfContentsDrawerProps> = ({
                                   ? 'text-white dark:text-zinc-900'
                                   : 'text-zinc-900 dark:text-zinc-100'
                                 : isActive
-                                ? 'text-zinc-400 dark:text-zinc-600'
+                                ? 'text-zinc-600 dark:text-zinc-600'
                                 : 'text-zinc-300 hover:text-zinc-600 dark:hover:text-zinc-300'
                             }`}
                             title={isBookmarked ? 'Remover favorito' : 'Favoritar'}

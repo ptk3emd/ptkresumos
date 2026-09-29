@@ -33,7 +33,7 @@ export const CellNoteEditor: React.FC<CellNoteEditorProps> = ({
           <span className="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-zinc-100">
             Minhas Anotações & Comentários
           </span>
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="text-xs text-zinc-600 dark:text-zinc-300">
             (Suporta Markdown)
           </span>
         </div>
@@ -56,7 +56,7 @@ export const CellNoteEditor: React.FC<CellNoteEditorProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1 text-zinc-400 hover:text-black dark:hover:text-white rounded"
+            className="p-1 text-zinc-600 hover:text-black dark:hover:text-white rounded"
             title="Fechar anotações"
           >
             <X className="w-3.5 h-3.5" />
@@ -69,7 +69,7 @@ export const CellNoteEditor: React.FC<CellNoteEditorProps> = ({
           {text.trim() ? (
             <MarkdownView content={text} />
           ) : (
-            <p className="text-zinc-400 italic text-xs">Nenhuma anotação escrita ainda.</p>
+            <p className="text-zinc-600 italic text-xs">Nenhuma anotação escrita ainda.</p>
           )}
         </div>
       ) : (
@@ -89,7 +89,7 @@ export const CellNoteEditor: React.FC<CellNoteEditorProps> = ({
             <button
               type="button"
               onClick={handleClear}
-              className="flex items-center gap-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:underline px-1 py-0.5"
+              className="flex items-center gap-1 text-xs text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:underline px-1 py-0.5"
             >
               <Trash2 className="w-3 h-3" /> Excluir anotação
             </button>
@@ -99,7 +99,7 @@ export const CellNoteEditor: React.FC<CellNoteEditorProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white"
+            className="px-2.5 py-1 text-xs text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white"
           >
             Cancelar
           </button>
