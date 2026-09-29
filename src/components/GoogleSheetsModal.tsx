@@ -243,7 +243,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
             </div>
             <div>
               <h3 className="font-bold text-base leading-snug">Google Sheets</h3>
-              <p className="text-[11px] text-zinc-500 dark:text-zinc-400">
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-300">
                 Sincronize tabelas, anotações e revisões com suas planilhas
               </p>
             </div>
@@ -251,7 +251,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="text-zinc-400 hover:text-black dark:hover:text-white p-1 rounded-md transition-colors"
+            className="text-zinc-600 hover:text-black dark:hover:text-white p-1 rounded-md transition-colors"
             aria-label="Fechar modal"
           >
             <X className="w-5 h-5" />
@@ -303,7 +303,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
             <p className="text-xs text-zinc-600 dark:text-zinc-300">
               {pendingConfirmation.description}
             </p>
-            <div className="bg-white dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 text-[11.5px] space-y-1 text-zinc-600 dark:text-zinc-400">
+            <div className="bg-white dark:bg-zinc-900 p-2.5 rounded border border-zinc-200 dark:border-zinc-800 text-[11.5px] space-y-1 text-zinc-600 dark:text-zinc-300">
               {pendingConfirmation.details.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-1.5">
                   <span className="font-bold">•</span>
@@ -341,13 +341,13 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
         ) : !currentUser || !hasToken ? (
           /* STATE 2: NOT AUTHENTICATED - Official Google Sign-In */
           <div className="py-6 text-center space-y-4">
-            <div className="w-12 h-12 mx-auto rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-500">
+            <div className="w-12 h-12 mx-auto rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-600">
               <FileSpreadsheet className="w-6 h-6" />
             </div>
 
             <div className="space-y-1 max-w-sm mx-auto">
               <h4 className="font-semibold text-sm">Conecte sua Conta Google</h4>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
                 Permita que o aplicativo crie e sincronize suas planilhas de estudo clínico no Google Drive e Google Sheets.
               </p>
             </div>
@@ -362,7 +362,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
               >
                 {isAuthenticating ? (
                   <>
-                    <Loader2 className="w-4 h-4 animate-spin text-zinc-500" />
+                    <Loader2 className="w-4 h-4 animate-spin text-zinc-600" />
                     <span>Conectando com o Google...</span>
                   </>
                 ) : (
@@ -412,7 +412,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                   <div className="font-semibold truncate">
                     {currentUser.displayName || 'Usuário Google'}
                   </div>
-                  <div className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">
+                  <div className="text-[11px] text-zinc-600 dark:text-zinc-300 truncate">
                     {currentUser.email}
                   </div>
                 </div>
@@ -421,7 +421,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
               <button
                 type="button"
                 onClick={handleSignOut}
-                className="flex items-center gap-1 px-2 py-1 text-[11px] text-zinc-500 hover:text-black dark:hover:text-white rounded border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                className="flex items-center gap-1 px-2 py-1 text-[11px] text-zinc-600 hover:text-black dark:hover:text-white rounded border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                 title="Desconectar conta Google"
               >
                 <LogOut className="w-3 h-3" />
@@ -436,11 +436,11 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                   <Plus className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
                   <span className="font-bold text-xs">Criar Nova Planilha Completa</span>
                 </div>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-medium">
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-medium">
                   35 temas
                 </span>
               </div>
-              <p className="text-[11.5px] text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              <p className="text-[11.5px] text-zinc-600 dark:text-zinc-300 leading-relaxed">
                 Gera uma planilha organizada com abas por capítulo clínico, incluindo todas as tabelas, notas de estudo e status de revisão.
               </p>
               <button
@@ -461,14 +461,14 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                     <Layers className="w-4 h-4 text-zinc-900 dark:text-zinc-100" />
                     <span className="font-bold text-xs">Tema Atual: {currentTopic.title}</span>
                   </div>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-medium">
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 font-medium">
                     {currentTopic.tables.length} tabelas
                   </span>
                 </div>
 
                 {recentSheets.length > 0 ? (
                   <div className="space-y-1.5">
-                    <label className="text-[11px] text-zinc-500 dark:text-zinc-400 block font-medium">
+                    <label className="text-[11px] text-zinc-600 dark:text-zinc-300 block font-medium">
                       Selecione a planilha de destino:
                     </label>
                     <select
@@ -492,7 +492,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                     </button>
                   </div>
                 ) : (
-                  <p className="text-[11px] text-zinc-500 dark:text-zinc-400 italic">
+                  <p className="text-[11px] text-zinc-600 dark:text-zinc-300 italic">
                     Nenhuma planilha encontrada recentemente no Drive. Crie uma nova acima para habilitar o envio individual.
                   </p>
                 )}
@@ -510,7 +510,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                   type="button"
                   onClick={loadRecentSheets}
                   disabled={isLoadingSheets}
-                  className="text-[11px] text-zinc-400 hover:text-black dark:hover:text-white flex items-center gap-1"
+                  className="text-[11px] text-zinc-600 hover:text-black dark:hover:text-white flex items-center gap-1"
                 >
                   <RefreshCw className={`w-3 h-3 ${isLoadingSheets ? 'animate-spin' : ''}`} />
                   <span>Atualizar</span>
@@ -518,12 +518,12 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
               </div>
 
               {isLoadingSheets ? (
-                <div className="py-4 text-center text-xs text-zinc-400 flex items-center justify-center gap-2">
+                <div className="py-4 text-center text-xs text-zinc-600 flex items-center justify-center gap-2">
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
                   <span>Carregando planilhas do Google Drive...</span>
                 </div>
               ) : recentSheets.length === 0 ? (
-                <p className="text-xs text-zinc-400 italic text-center py-3">
+                <p className="text-xs text-zinc-600 italic text-center py-3">
                   Nenhuma planilha encontrada. Clique em "Exportar Manual Completo" para criar a primeira!
                 </p>
               ) : (
@@ -534,14 +534,14 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                       className="flex items-center justify-between p-2 rounded-md bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 text-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
                     >
                       <div className="flex items-center gap-2 truncate pr-2">
-                        <FileSpreadsheet className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 shrink-0" />
+                        <FileSpreadsheet className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-300 shrink-0" />
                         <span className="truncate font-medium">{sheet.name}</span>
                       </div>
                       <a
                         href={sheet.webViewLink || `https://docs.google.com/spreadsheets/d/${sheet.id}/edit`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-zinc-400 hover:text-black dark:hover:text-white p-1 rounded shrink-0 flex items-center gap-1 text-[11px]"
+                        className="text-zinc-600 hover:text-black dark:hover:text-white p-1 rounded shrink-0 flex items-center gap-1 text-[11px]"
                         title="Abrir no Google Sheets"
                       >
                         <ExternalLink className="w-3 h-3" />
@@ -555,7 +555,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
         )}
 
         {/* Footer */}
-        <div className="mt-5 pt-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400">
+        <div className="mt-5 pt-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-600">
           <span className="flex items-center gap-1">
             <ShieldCheck className="w-3 h-3 text-zinc-900 dark:text-zinc-100" />
             <span>Google Workspace API protegida</span>

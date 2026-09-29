@@ -70,3 +70,14 @@ body {
   animation: fadeIn 0.12s ease-out forwards;
 }
 
+
+/* Tons extras usados nos componentes (não existem na paleta padrão) */
+@theme {
+  --color-zinc-750: #303036;
+  --color-zinc-850: #1f1f23;
+}
+
+/* Evita zoom por toque duplo e seleção acidental ao ocultar/revelar */
+td {
+  touch-action: manipulation;
+}

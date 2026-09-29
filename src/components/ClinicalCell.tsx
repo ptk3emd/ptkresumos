@@ -101,8 +101,8 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
     const now = Date.now();
     const timeSinceLastTap = now - lastTapTimeRef.current;
 
-    // Double tap window: between 40ms and 350ms
-    if (timeSinceLastTap > 40 && timeSinceLastTap < 350) {
+    // Double tap window: between 40ms and 400ms
+    if (timeSinceLastTap > 40 && timeSinceLastTap < 400) {
       lastDoubleTapTimeRef.current = now;
       lastTapTimeRef.current = 0;
       onToggleHide();
@@ -140,14 +140,6 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
     }
   };
 
-  const handleRevealClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    lastTapTimeRef.current = 0;
-    lastDoubleTapTimeRef.current = Date.now();
-    onToggleHide();
-    setIsActive(false);
-  };
-
   return (
     <td
       ref={cellRef}
@@ -165,16 +157,15 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
       {/* Masked / Hidden Active Recall State */}
       {isHidden ? (
         <div
-          onClick={handleRevealClick}
           className="cursor-pointer select-none rounded p-2.5 sm:p-3 bg-zinc-100 dark:bg-zinc-900 border border-dashed border-zinc-400 dark:border-zinc-700 text-center transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-800 my-0.5"
-          title="Toque para revelar ou toque duplo para alternar"
+          title="Toque duplo para revelar"
         >
           <div className="flex items-center justify-center gap-1.5 text-zinc-900 dark:text-zinc-100 font-semibold text-xs">
             <EyeOff className="w-3.5 h-3.5 shrink-0" />
             <span>Ocultado para teste de memória</span>
           </div>
-          <span className="text-[11px] text-zinc-500 dark:text-zinc-400 block mt-0.5 font-medium">
-            Toque para revelar a resposta
+          <span className="text-[11px] text-zinc-600 dark:text-zinc-300 block mt-0.5 font-medium">
+            Toque duplo para revelar a resposta
           </span>
         </div>
       ) : (
@@ -184,7 +175,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
 
           {/* Indicator if user customized this cell */}
           {isCustomized && (
-            <div className="mt-1.5 flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
+            <div className="mt-1.5 flex items-center gap-2 text-[11px] text-zinc-600 dark:text-zinc-300">
               <span className="px-1.5 py-0.2 bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 rounded text-[10.5px] font-medium border border-zinc-200 dark:border-zinc-700">
                 Editado
               </span>
@@ -194,7 +185,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
                   e.stopPropagation();
                   onResetOverride();
                 }}
-                className="hover:underline flex items-center gap-0.5 text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white"
+                className="hover:underline flex items-center gap-0.5 text-zinc-600 hover:text-black dark:text-zinc-300 dark:hover:text-white"
               >
                 <RotateCcw className="w-3 h-3" /> Restaurar
               </button>
@@ -216,7 +207,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
             <span className="font-semibold text-zinc-900 dark:text-zinc-100 text-[10.5px] uppercase tracking-wider flex items-center gap-1">
               <MessageSquare className="w-3 h-3" /> Anotação
             </span>
-            <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">Editar</span>
+            <span className="text-[10px] text-zinc-600 dark:text-zinc-300 font-medium">Editar</span>
           </div>
           <div className="text-zinc-800 dark:text-zinc-200 text-xs">
             <MarkdownView content={noteContent!} />
@@ -296,7 +287,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
             e.stopPropagation();
             setIsActive(false);
           }}
-          className="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300 p-0.5 rounded"
+          className="text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300 p-0.5 rounded"
           title="Fechar barra"
           aria-label="Fechar barra"
         >

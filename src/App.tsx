@@ -235,11 +235,11 @@ export default function App() {
         {/* Search Results / Content Display */}
         {filteredTopics.length === 0 ? (
           <div className="p-12 text-center bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 space-y-3">
-            <SearchX className="w-8 h-8 text-zinc-400 mx-auto" />
+            <SearchX className="w-8 h-8 text-zinc-600 mx-auto" />
             <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
               Nenhum tema encontrado
             </h3>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 max-w-sm mx-auto">
+            <p className="text-xs text-zinc-600 dark:text-zinc-300 max-w-sm mx-auto">
               Não encontramos resultados para &ldquo;{searchQuery}&rdquo;. Tente buscar por nomes genéricos de doenças, fármacos ou sintomas.
             </p>
             <button
@@ -335,12 +335,12 @@ export default function App() {
 
       {/* Footer (hidden in Focus Mode) */}
       {!isFocusMode && (
-        <footer className="mt-12 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 py-6 text-xs text-zinc-600 dark:text-zinc-400">
+        <footer className="mt-12 border-t border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 py-6 text-xs text-zinc-600 dark:text-zinc-300">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p className="max-w-xl leading-relaxed">
               Uma tabela por tema, com os tópicos relevantes para cada doença ou quadro. Siglas aparecem após o termo por extenso. Doses e valores são orientativos: confirme em diretrizes atualizadas.
             </p>
-            <div className="flex items-center gap-3 text-[11.5px] text-zinc-600 dark:text-zinc-400 shrink-0">
+            <div className="flex items-center gap-3 text-[11.5px] text-zinc-600 dark:text-zinc-300 shrink-0">
               <span>{allTopics.length} temas clínicos</span>
               <span aria-hidden="true">·</span>
               <span>Salvamento local ativo</span>

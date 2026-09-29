@@ -95,12 +95,12 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
         <div className="pb-3 border-b border-zinc-200 dark:border-zinc-800 space-y-2">
           {/* Top Line: Chapter Breadcrumb + Compact Action Toolbar */}
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-500 dark:text-zinc-400">
+            <div className="flex items-center gap-2 text-[11px] font-medium text-zinc-600 dark:text-zinc-300">
               <span className="uppercase tracking-wider font-semibold truncate max-w-[260px] sm:max-w-md">
                 {topic.chapterTitle}
               </span>
               <span className="text-zinc-300 dark:text-zinc-700">·</span>
-              <span className="tabular-nums text-zinc-400 dark:text-zinc-500">
+              <span className="tabular-nums text-zinc-600 dark:text-zinc-300">
                 {currentIndex + 1}/{allTopics.length}
               </span>
             </div>
@@ -117,7 +117,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
                       ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-bold shadow-2xs ring-1 ring-zinc-700 dark:ring-zinc-300'
                       : reminder
                         ? 'bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-medium'
-                        : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                        : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
                   }`}
                   title={
                     reminder
@@ -139,7 +139,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
                 className={`flex items-center gap-1 px-2 py-1 text-xs rounded-md transition-colors ${
                   isStudied
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
                 }`}
                 title={isStudied ? 'Desmarcar como concluído' : 'Marcar tema como concluído'}
               >
@@ -154,7 +154,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
                 className={`p-1.5 rounded-md transition-colors ${
                   isBookmarked
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900'
-                    : 'text-zinc-500 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                    : 'text-zinc-600 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
                 }`}
                 title={isBookmarked ? 'Remover dos favoritos' : 'Favoritar'}
               >
@@ -168,7 +168,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
                 className={`flex items-center gap-1 px-2 py-1 text-xs rounded-md transition-colors ${
                   areAllTopicCellsHidden
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
                 }`}
                 title={areAllTopicCellsHidden ? 'Mostrar respostas' : 'Ocultar respostas para teste'}
               >
@@ -190,7 +190,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
                 <button
                   type="button"
                   onClick={onToggleFocusMode}
-                  className="flex items-center gap-1 px-2 py-1 text-xs text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 rounded-md transition-colors"
+                  className="flex items-center gap-1 px-2 py-1 text-xs text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 rounded-md transition-colors"
                   title="Modo Zen (Esc): foco total apenas nas tabelas"
                 >
                   <Maximize2 className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ export const SingleTopicView: React.FC<SingleTopicViewProps> = ({
           {/* Clinical Note (if present) */}
           {topic.note && (
             <div className="flex items-start gap-2 p-2.5 bg-zinc-100 dark:bg-zinc-900 border-l-2 border-zinc-900 dark:border-zinc-100 text-xs text-zinc-700 dark:text-zinc-300 rounded-r">
-              <Info className="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400 shrink-0 mt-0.5" />
+              <Info className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-300 shrink-0 mt-0.5" />
               <p className="leading-relaxed">{topic.note}</p>
             </div>
           )}

@@ -82,7 +82,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
               <h2 className="font-bold text-sm sm:text-base leading-tight">
                 Lembretes de Revisão
               </h2>
-              <p className="text-[11px] text-zinc-500 dark:text-zinc-400">
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-300">
                 {dueList.length > 0
                   ? `${dueList.length} ${dueList.length === 1 ? 'tópico pendente hoje' : 'tópicos pendentes hoje'}`
                   : 'Nenhum tópico pendente hoje'}
@@ -92,7 +92,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-zinc-400 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
+            className="p-1.5 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
             aria-label="Fechar painel"
           >
             <X className="w-4 h-4" />
@@ -126,7 +126,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
             className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
               activeTab === 'due'
                 ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
+                : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
             }`}
           >
             <span>Pendentes</span>
@@ -143,11 +143,11 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
             className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
               activeTab === 'upcoming'
                 ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
+                : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
             }`}
           >
             <span>Próximos</span>
-            <span className="text-[10px] text-zinc-400 tabular-nums">
+            <span className="text-[10px] text-zinc-600 tabular-nums">
               ({upcomingList.length})
             </span>
           </button>
@@ -158,7 +158,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
             className={`px-3 py-1.5 rounded-lg transition-colors cursor-pointer ${
               activeTab === 'all'
                 ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
+                : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
             }`}
           >
             <span>Todos ({scheduledList.length})</span>
@@ -168,8 +168,8 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
         {/* Topics List */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {displayList.length === 0 ? (
-            <div className="p-8 text-center text-zinc-500 dark:text-zinc-400 space-y-2">
-              <CheckCircle2 className="w-8 h-8 mx-auto text-zinc-400" />
+            <div className="p-8 text-center text-zinc-600 dark:text-zinc-300 space-y-2">
+              <CheckCircle2 className="w-8 h-8 mx-auto text-zinc-600" />
               <p className="font-semibold text-sm text-zinc-800 dark:text-zinc-200">
                 {activeTab === 'due'
                   ? 'Nenhuma revisão pendente para hoje!'
@@ -191,7 +191,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
               >
                 {/* Top Chapter & Due Status */}
                 <div className="flex items-center justify-between gap-2 text-[11px]">
-                  <span className="uppercase tracking-wider font-semibold text-zinc-500 dark:text-zinc-400 truncate max-w-[200px]">
+                  <span className="uppercase tracking-wider font-semibold text-zinc-600 dark:text-zinc-300 truncate max-w-[200px]">
                     {topic.chapterTitle}
                   </span>
                   <span
@@ -232,7 +232,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
                     <button
                       type="button"
                       onClick={() => onOpenScheduleModal(topic.id)}
-                      className="px-2 py-1 text-[11px] text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
+                      className="px-2 py-1 text-[11px] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white rounded hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
                       title="Alterar data do lembrete"
                     >
                       Reagendar
@@ -255,7 +255,7 @@ export const DueReviewsDrawer: React.FC<DueReviewsDrawerProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-3.5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-xs text-zinc-500 dark:text-zinc-400 flex items-center justify-between">
+        <div className="p-3.5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-xs text-zinc-600 dark:text-zinc-300 flex items-center justify-between">
           <span>{scheduledList.length} temas agendados no total</span>
           <button
             type="button"

@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenToc}
-              className="flex items-center gap-1 text-[11px] font-medium text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors tabular-nums shrink-0"
+              className="flex items-center gap-1 text-[11px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors tabular-nums shrink-0"
               title={`Progresso: ${studiedCount} de ${totalTopics} revisados (${studiedPercent}%). Clique para ver índice.`}
             >
               <CheckCircle2 className="w-3.5 h-3.5" />
@@ -118,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`flex items-center gap-1.5 px-2 sm:px-2.5 py-1 rounded-lg text-xs transition-colors cursor-pointer ${
                   dueReviewsCount > 0
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-bold shadow-2xs hover:bg-black dark:hover:bg-white'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850'
                 }`}
                 title={
                   dueReviewsCount > 0
@@ -132,7 +132,7 @@ export const Header: React.FC<HeaderProps> = ({
                   {dueReviewsCount > 0 ? `${dueReviewsCount} para revisar` : 'Revisões'}
                 </span>
                 {dueReviewsCount === 0 && totalScheduledReviewsCount > 0 && (
-                  <span className="text-[10px] text-zinc-400 tabular-nums">
+                  <span className="text-[10px] text-zinc-600 tabular-nums">
                     ({totalScheduledReviewsCount})
                   </span>
                 )}
@@ -150,7 +150,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`px-2 py-1 rounded transition-colors ${
                   viewMode === 'single'
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
                 }`}
                 title="Ver um tópico de cada vez"
               >
@@ -162,7 +162,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`px-2 py-1 rounded transition-colors ${
                   viewMode === 'all'
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
                 }`}
                 title="Ver todas as tabelas em sequência"
               >
@@ -252,7 +252,7 @@ export const Header: React.FC<HeaderProps> = ({
                 className={`p-1.5 rounded-md text-xs transition-colors cursor-pointer flex items-center gap-1 ${
                   dueReviewsCount > 0
                     ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-bold shadow-2xs'
-                    : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
+                    : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-900'
                 }`}
                 title={dueReviewsCount > 0 ? `${dueReviewsCount} revisões hoje` : 'Lembretes de revisão'}
                 aria-label="Lembretes de revisão"
@@ -332,7 +332,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-1.5 text-zinc-500 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+                className="p-1.5 text-zinc-600 hover:text-black dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
                 aria-label="Fechar menu"
               >
                 <X className="w-4 h-4" />
@@ -341,7 +341,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* View Mode Switcher (Segmented Control) */}
             <div className="space-y-1.5">
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-zinc-600 dark:text-zinc-300">
                 Modo de Visualização
               </div>
               <div className="grid grid-cols-2 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-lg text-xs font-semibold border border-zinc-200 dark:border-zinc-800">
@@ -354,7 +354,7 @@ export const Header: React.FC<HeaderProps> = ({
                   className={`py-2 px-3 rounded-md text-center transition-colors ${
                     viewMode === 'single'
                       ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-bold shadow-2xs'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
+                      : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
                   }`}
                 >
                   1 Tópico por vez
@@ -368,7 +368,7 @@ export const Header: React.FC<HeaderProps> = ({
                   className={`py-2 px-3 rounded-md text-center transition-colors ${
                     viewMode === 'all'
                       ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-bold shadow-2xs'
-                      : 'text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
+                      : 'text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white'
                   }`}
                 >
                   Todas as Tabelas
@@ -393,10 +393,10 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">Índice Geral de Capítulos</div>
-                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">96 temas organizados por especialidade</div>
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">96 temas organizados por especialidade</div>
                   </div>
                 </div>
-                <span className="text-xs text-zinc-400">→</span>
+                <span className="text-xs text-zinc-600">→</span>
               </button>
 
               {/* Focus / Zen Mode */}
@@ -414,10 +414,10 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">Modo Foco (Zen)</div>
-                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">Esconde cabeçalho e distrações para imersão</div>
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">Esconde cabeçalho e distrações para imersão</div>
                   </div>
                 </div>
-                <span className="text-xs text-zinc-400">→</span>
+                <span className="text-xs text-zinc-600">→</span>
               </button>
 
               {/* Spaced Review Reminders */}
@@ -443,12 +443,12 @@ export const Header: React.FC<HeaderProps> = ({
                           </span>
                         )}
                       </div>
-                      <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                      <div className="text-[11px] text-zinc-600 dark:text-zinc-300">
                         {totalScheduledReviewsCount > 0 ? `${totalScheduledReviewsCount} agendados no total` : 'Gerenciar lembretes de tópicos'}
                       </div>
                     </div>
                   </div>
-                  <span className="text-xs text-zinc-400">→</span>
+                  <span className="text-xs text-zinc-600">→</span>
                 </button>
               )}
 
@@ -467,10 +467,10 @@ export const Header: React.FC<HeaderProps> = ({
                   </div>
                   <div>
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">Google Sheets</div>
-                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">Exportar tabelas e sincronizar planilhas</div>
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">Exportar tabelas e sincronizar planilhas</div>
                   </div>
                 </div>
-                <span className="text-xs text-zinc-400">→</span>
+                <span className="text-xs text-zinc-600">→</span>
               </button>
 
               {/* Backup & Annotations */}
@@ -493,13 +493,13 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100 flex items-center gap-1.5">
                       <span>Backup & Anotações</span>
                       {notesCount > 0 && (
-                        <span className="text-[10px] text-zinc-500 dark:text-zinc-400">({notesCount} notas)</span>
+                        <span className="text-[10px] text-zinc-600 dark:text-zinc-300">({notesCount} notas)</span>
                       )}
                     </div>
-                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">Salvar, restaurar dados e exportar notas</div>
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">Salvar, restaurar dados e exportar notas</div>
                   </div>
                 </div>
-                <span className="text-xs text-zinc-400">→</span>
+                <span className="text-xs text-zinc-600">→</span>
               </button>
 
               {/* Reveal Hidden Active Recall Cells (if any) */}
@@ -520,7 +520,7 @@ export const Header: React.FC<HeaderProps> = ({
                       <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">
                         Revelar Respostas Ocultas ({hiddenCount})
                       </div>
-                      <div className="text-[11px] text-zinc-500 dark:text-zinc-400">Exibir todas as células mascaradas para teste</div>
+                      <div className="text-[11px] text-zinc-600 dark:text-zinc-300">Exibir todas as células mascaradas para teste</div>
                     </div>
                   </div>
                   <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">Revelar</span>
@@ -543,12 +543,12 @@ export const Header: React.FC<HeaderProps> = ({
                     <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">
                       {theme === 'dark' ? 'Mudar para Modo Claro' : 'Mudar para Modo Escuro'}
                     </div>
-                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                    <div className="text-[11px] text-zinc-600 dark:text-zinc-300">
                       Tema atual: {theme === 'dark' ? 'Escuro' : 'Claro'}
                     </div>
                   </div>
                 </div>
-                <span className="text-xs text-zinc-400">Alternar</span>
+                <span className="text-xs text-zinc-600">Alternar</span>
               </button>
             </div>
           </div>
