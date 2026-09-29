@@ -70,7 +70,6 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
       )}
 
       {/* Column width controls */}
-      {hasMultipleColumns && (
         <div className="border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900">
           <button
             type="button"
@@ -111,7 +110,6 @@ export const MedicalTableView: React.FC<MedicalTableViewProps> = ({
             </div>
           )}
         </div>
-      )}
 
       {/* Mobile scroll hint for wider tables */}
       {hasMultipleColumns && (
