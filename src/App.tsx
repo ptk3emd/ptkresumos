@@ -128,38 +128,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors selection:bg-zinc-300 selection:text-black dark:selection:bg-zinc-700 dark:selection:text-white">
-      {/* Top Bar Header or Minimalist Focus Bar */}
+      {/* Discreet floating exit button when in Zen / Focus Mode */}
       {isFocusMode ? (
-        <header className="sticky top-0 z-30 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 transition-colors py-2.5 px-3 sm:px-6">
-          <div className="max-w-4xl mx-auto flex items-center justify-between gap-3">
-            <div className="flex items-center gap-2 truncate">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0 animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 shrink-0">
-                Modo Foco
-              </span>
-              <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700">·</span>
-              <span className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100 truncate">
-                {currentTopic.title}
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2 shrink-0">
-              <StudyTimer />
-              <button
-                type="button"
-                onClick={() => setIsFocusMode(false)}
-                className="flex items-center gap-1.5 px-2.5 py-1 bg-zinc-900 hover:bg-black dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-900 rounded-md text-xs font-semibold transition-colors shadow-2xs"
-                title="Sair do Modo Foco (Esc)"
-              >
-                <Minimize2 className="w-3.5 h-3.5" />
-                <span>Sair</span>
-                <kbd className="hidden sm:inline ml-1 px-1 py-0.2 text-[9.5px] bg-white/20 dark:bg-black/20 rounded font-mono">
-                  ESC
-                </kbd>
-              </button>
-            </div>
-          </div>
-        </header>
+        <div className="fixed top-3 right-3 sm:top-4 sm:right-6 z-50 animate-fadeIn">
+          <button
+            type="button"
+            onClick={() => setIsFocusMode(false)}
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/90 hover:bg-black text-white dark:bg-zinc-100/90 dark:hover:bg-white dark:text-zinc-900 backdrop-blur rounded-lg text-xs font-semibold shadow-lg transition-all opacity-80 hover:opacity-100"
+            title="Sair do Modo Zen (Esc)"
+          >
+            <Minimize2 className="w-3.5 h-3.5" />
+            <span>Sair do Modo Zen</span>
+            <kbd className="hidden sm:inline ml-1 px-1 py-0.2 text-[9px] bg-white/20 dark:bg-black/20 rounded font-mono">
+              ESC
+            </kbd>
+          </button>
+        </div>
       ) : (
         <Header
           viewMode={viewMode}

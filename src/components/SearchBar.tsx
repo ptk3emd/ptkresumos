@@ -188,7 +188,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                   <button
                     type="button"
                     onClick={handleClearAllRecents}
-                    className="flex items-center gap-1 text-zinc-400 hover:text-red-600 dark:hover:text-red-400 text-[10.5px] transition-colors"
+                    className="flex items-center gap-1 text-zinc-400 hover:text-black dark:hover:text-white text-[10.5px] transition-colors"
                     title="Limpar histórico de buscas"
                   >
                     <Trash2 className="w-3 h-3" />

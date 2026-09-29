@@ -78,7 +78,7 @@ export const StudyTimer: React.FC = () => {
         <span className="relative flex items-center justify-center">
           <Timer className="w-3.5 h-3.5 shrink-0" />
           {isRunning && (
-            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+            <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-zinc-100 animate-ping" />
           )}
         </span>
 

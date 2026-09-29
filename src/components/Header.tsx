@@ -142,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               type="button"
               onClick={onOpenSheets}
-              className="p-1.5 text-zinc-700 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-100 dark:hover:bg-zinc-850 rounded-lg transition-colors"
+              className="p-1.5 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-850 rounded-lg transition-colors"
               title="Google Sheets: exportar e sincronizar planilhas"
               aria-label="Google Sheets"
             >

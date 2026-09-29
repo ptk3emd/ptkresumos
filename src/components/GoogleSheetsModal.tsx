@@ -260,7 +260,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
 
         {/* Auth Error Banner */}
         {authError && (
-          <div className="mb-4 p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 text-xs text-red-700 dark:text-red-300 rounded-lg flex items-start gap-2">
+          <div className="mb-4 p-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-zinc-100 rounded-lg flex items-start gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
             <span>{authError}</span>
           </div>
@@ -268,7 +268,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
 
         {/* Operation Error Banner */}
         {operationError && (
-          <div className="mb-4 p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 text-xs text-red-700 dark:text-red-300 rounded-lg flex items-start gap-2">
+          <div className="mb-4 p-3 bg-zinc-100 dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-zinc-100 rounded-lg flex items-start gap-2">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
             <span>{operationError}</span>
           </div>
@@ -278,7 +278,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
         {successResult && (
           <div className="mb-4 p-3 bg-zinc-100 dark:bg-zinc-850 border border-zinc-300 dark:border-zinc-700 text-xs text-zinc-900 dark:text-zinc-100 rounded-lg space-y-2">
             <div className="flex items-center gap-2 font-medium">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-zinc-900 dark:text-zinc-100 shrink-0" />
               <span>{successResult.message}</span>
             </div>
             <a
@@ -297,7 +297,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
         {pendingConfirmation ? (
           <div className="p-4 bg-zinc-50 dark:bg-zinc-850/80 border border-zinc-200 dark:border-zinc-750 rounded-lg space-y-3 animate-fadeIn">
             <div className="flex items-center gap-2 text-zinc-900 dark:text-zinc-100 font-bold text-sm">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-zinc-900 dark:text-zinc-100 shrink-0" />
               <span>Confirmar Ação no Google Sheets</span>
             </div>
             <p className="text-xs text-zinc-600 dark:text-zinc-300">
@@ -534,7 +534,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
                       className="flex items-center justify-between p-2 rounded-md bg-zinc-50 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-800 text-xs hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
                     >
                       <div className="flex items-center gap-2 truncate pr-2">
-                        <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <FileSpreadsheet className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400 shrink-0" />
                         <span className="truncate font-medium">{sheet.name}</span>
                       </div>
                       <a
@@ -557,7 +557,7 @@ export const GoogleSheetsModal: React.FC<GoogleSheetsModalProps> = ({
         {/* Footer */}
         <div className="mt-5 pt-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400">
           <span className="flex items-center gap-1">
-            <ShieldCheck className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
+            <ShieldCheck className="w-3 h-3 text-zinc-900 dark:text-zinc-100" />
             <span>Google Workspace API protegida</span>
           </span>
           <button
