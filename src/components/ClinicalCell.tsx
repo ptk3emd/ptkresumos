@@ -19,6 +19,12 @@ interface ClinicalCellProps {
   onSaveNote: (note: string) => void;
 }
 
+// Compartilhado entre todas as células: após um toque duplo, o navegador ainda
+// dispara click/dblclick sintéticos na posição do dedo. Como ocultar/revelar
+// muda a altura da linha, esses eventos podem cair em OUTRA célula.
+let lastTouchDoubleTapAt = 0;
+const isAfterTouchDoubleTap = () => Date.now() - lastTouchDoubleTapAt < 700;
+
 export const ClinicalCell: React.FC<ClinicalCellProps> = ({
   cellId,
   isFirstColumn = false,
@@ -113,8 +119,11 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
 
     // Double tap window: between 40ms and 400ms
     if (timeSinceLastTap > 40 && timeSinceLastTap < 400) {
+      // Impede os eventos de mouse sintéticos (click/dblclick) desse toque
+      if (e.cancelable) e.preventDefault();
       cancelSingleTap();
       lastDoubleTapTimeRef.current = now;
+      lastTouchDoubleTapAt = now;
       lastTapTimeRef.current = 0;
       onToggleHide();
       setIsActive(false);
@@ -124,6 +133,9 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
   };
 
   const handleCellDoubleClick = (e: React.MouseEvent) => {
+    if (isAfterTouchDoubleTap()) {
+      return;
+    }
     // If mobile touch double-tap already fired within 500ms, ignore duplicate mouse event
     if (Date.now() - lastDoubleTapTimeRef.current < 500) {
       return;
@@ -139,6 +151,9 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
   };
 
   const handleCellClick = (e: React.MouseEvent) => {
+    if (isAfterTouchDoubleTap()) {
+      return;
+    }
     // If a double tap/click was just triggered, do not reopen toolbar
     if (Date.now() - lastDoubleTapTimeRef.current < 400) {
       return;
@@ -154,7 +169,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
       singleTapTimerRef.current = setTimeout(() => {
         singleTapTimerRef.current = null;
         setIsActive(prev => !prev);
-      }, 320);
+      }, 420);
     }
   };
 
