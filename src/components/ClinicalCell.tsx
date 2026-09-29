@@ -39,6 +39,16 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
   const touchStartPos = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const lastTapTimeRef = useRef<number>(0);
   const lastDoubleTapTimeRef = useRef<number>(0);
+  const singleTapTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelSingleTap = () => {
+    if (singleTapTimerRef.current) {
+      clearTimeout(singleTapTimerRef.current);
+      singleTapTimerRef.current = null;
+    }
+  };
+
+  useEffect(() => cancelSingleTap, []);
 
   const isCustomized = currentContent !== defaultContent;
   const hasNote = Boolean(noteContent && noteContent.trim().length > 0);
@@ -103,6 +113,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
 
     // Double tap window: between 40ms and 400ms
     if (timeSinceLastTap > 40 && timeSinceLastTap < 400) {
+      cancelSingleTap();
       lastDoubleTapTimeRef.current = now;
       lastTapTimeRef.current = 0;
       onToggleHide();
@@ -121,6 +132,7 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
     if (target.closest('button, input, textarea, a, [role="button"]')) {
       return;
     }
+    cancelSingleTap();
     lastDoubleTapTimeRef.current = Date.now();
     onToggleHide();
     setIsActive(false);
@@ -136,7 +148,13 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
       return;
     }
     if (!isHidden) {
-      setIsActive(prev => !prev);
+      // Adia a barra para depois da janela de toque duplo, para não mexer no
+      // layout entre o primeiro e o segundo toque.
+      cancelSingleTap();
+      singleTapTimerRef.current = setTimeout(() => {
+        singleTapTimerRef.current = null;
+        setIsActive(prev => !prev);
+      }, 320);
     }
   };
 
@@ -229,7 +247,9 @@ export const ClinicalCell: React.FC<ClinicalCellProps> = ({
       {/* Minimalist Action Toolbar: Shown when tapped (active) or hovered on desktop */}
       <div
         className={`mt-2 pt-1.5 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-1 text-xs transition-opacity ${
-          isActive ? 'flex' : 'hidden sm:group-hover:flex'
+          isActive
+            ? 'flex max-sm:absolute max-sm:inset-x-1 max-sm:bottom-1 max-sm:z-10 max-sm:rounded-md max-sm:px-1.5 max-sm:pb-1 max-sm:bg-white max-sm:dark:bg-zinc-900 max-sm:shadow-lg max-sm:ring-1 max-sm:ring-zinc-300 max-sm:dark:ring-zinc-700'
+            : 'hidden sm:group-hover:flex'
         }`}
         onClick={e => e.stopPropagation()}
       >
